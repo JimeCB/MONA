@@ -1,0 +1,219 @@
+/* Default CSS */
+/* ------------------Reset--------------------- */
+a,abbr,acronym,address,applet,article,aside,audio,b,blockquote,big,body,center,canvas,caption,cite,code,command,datalist,dd,del,details,dfn,dl,div,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,keygen,label,legend,li,meter,nav,object,ol,output,p,pre,progress,q,s,samp,section,small,span,source,strike,strong,sub,sup,table,tbody,tfoot,thead,th,tr,tdvideo,tt,u,ul,var{background:transparent;border:0 none;font-size:100%;margin:0;padding:0;border:0;outline:0;vertical-align:top;}ol, ul {list-style:none;}blockquote, q {quotes:none;}table, table td {padding:0;border:none;border-collapse:collapse;}img {vertical-align:top;}embed {vertical-align:top;}
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block;}
+mark, rp, rt, ruby, summary, time {display:inline;}
+input, textarea {border:0; padding:0; margin:0; outline: 0;}
+iframe {border:0; margin:0; padding:0;}
+input, textarea, select {margin:0; padding:0px;}
+*{border:0; padding:0; margin:0; outline: 0;}
+
+/* ------------------Font---------------------- */
+
+/* ------------------Grid---------------------- */
+* {box-sizing: border-box;}
+.row::after {content: ""; clear: both;display: block;}
+[class*="col-"] {float: left; border: 1px solid transparent; position:relative; height:auto;}
+
+/* ------------------Style--------------------- */
+body {background: #dcdcdc; color: #000000;}
+.row {position:relative; width:100%; height:auto; margin:auto; background-color:#ffffff; clear:both;}       
+a{text-decoration: none; color:#000000;}
+img {max-width:100%; height:auto; }
+
+
+.title {font-size:50px; line-height:60px; font-family: 'Cormorant Garamond', serif; }
+.subtitle {font-size:16px; font-family: 'Poppins', sans-serif; }
+.text {font-size:15px; font-family: 'Poppins', sans-serif; }
+
+/* ------------------Header-------------------- */
+
+.home {position:relative; }
+.home img {width:100%; height:auto;}
+
+.logo {position:absolute; top:10%; left:10%;}
+.logo h2 {font-family: 'Megrim', cursive; font-size:60px; }
+
+.menu {position:absolute; top:10%; left:30%;}
+.menu ul {list-style:none; margin:0; padding:0; }
+.menu ul li {display:inline-block; padding:10px 20px;}
+.menu ul li a {font-size:16px; font-family: 'Poppins', sans-serif; }
+.menu ul li:hover a {color:#ffffff;}
+
+.caption {position: absolute; top: 35%; left:10%; }
+
+.button {margin-top:40px;}
+.button a {background-color:#eafefe; padding:10px 20px; font-family: 'Poppins', sans-serif; font-size:15px;}
+.button a:hover {color:#ffffff; background-color:#000000;}
+
+.minimenu{display:none;}
+.minimenu{position: relative; margin: 0px; background:#585858;}
+.minimenu div{overflow: hidden; position: relative; font-size:30px; color: #ffffff; text-align:left; font-weight:bold; padding:10px;}
+.minimenu select{position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0; cursor: pointer;}
+
+
+
+/* ------------------Content------------------- */
+
+#about{height:200px; }
+.about {position:relative; height:550px; text-align:right;}
+.about h2 {margin:10% 10% 5% 0; }
+.about p {margin:0 10% 5% 0; line-height:40px;}
+.about img {display:block; margin:auto;}
+
+.also {position:relative; height:650px; text-align:left; }
+.also h2 {margin:10% 0 5% 10%;}
+.also p { margin:0 0 5% 10%; line-height:40px;}
+.also img {display:block; margin:auto;}
+
+.models h2 {text-align:center; margin:5% 0px; }
+.models h3 {font-size:40px; margin:30px 0px; font-family: 'Open Sans', sans-serif; font-weight:300;}
+.models p {line-height:40px; font-size:15px; margin:20px 0px; font-family: 'Open Sans', sans-serif; font-weight:300; }
+.models img{display:block; margin:auto;}
+
+.icon-horizontal {margin:0 10% 5% 0;}
+.icon-horizontal button {background-color:transparent; cursor:pointer; }
+.icon-horizontal i{margin:3px;}
+
+.icon-vertical {}
+.icon-vertical button {display:block; background-color:transparent;cursor:pointer; }
+.icon-vertical i {margin:3px; }
+
+#icon-h1, #icon-v1, #icon-v5 {color:#ff80b2; }
+
+
+
+/* -----------------------------------------------Responsive------------------------------------------------------ */
+/* ---------------------- For desktop: --------------------------------- */
+@media only screen and (min-width: 1252px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+
+/* ------------------ For tablets - horizontal ------------------------- */
+@media only screen and (min-width: 870px) and (max-width: 1251px) {
+    
+.title {font-size:40px; line-height:45px; }
+.subtitle {font-size:15px;}
+.text {font-size:14px;}
+
+.logo {left:5%; }
+.caption {top: 30%; left:5%;}
+.button {margin-top:20px;}
+
+#about {height:150px; }
+.about {height:400px;}
+.about p {line-height:30px;}
+
+.also {height:500px; }
+.also p {line-height:30px;}
+
+.models h3 {font-size:30px; margin:20px 0px;}
+.models p {line-height:20px; margin:15px 0px; }
+    
+    .col-s1 {width: 8.33%;}
+    .col-s2 {width: 16.66%;}
+    .col-s3 {width: 25%;}
+    .col-s4 {width: 33.33%;}
+    .col-s5 {width: 41.66%;}
+    .col-s6 {width: 50%;}
+    .col-s7 {width: 58.33%;}
+    .col-s8 {width: 66.66%;}
+    .col-s9 {width: 75%;}
+    .col-s10 {width: 83.33%;}
+    .col-s11 {width: 91.66%;}
+    .col-s12 {width: 100%;}
+}
+
+/* ----------------------- For tablets - vertical ------------------------- */
+@media only screen and (min-width: 690px) and (max-width: 869px) {
+
+.title {font-size:35px; line-height:30px;}
+.subtitle {font-size:15px; }
+.text {font-size:14px;}
+
+.logo {top:10%; left:5%;}
+.menu{top:10%; left:30%;}
+.menu ul li {padding:10px 10px;}
+.caption {top: 35%; left:5%;}
+.button {display:none; }
+
+#about {height:140px; }
+.about {height:350px;}
+.about p {line-height:23px;}
+
+.also {height:350px; }
+.also p {line-height:23px;}
+
+.models h3 {font-size:30px; margin:20px 0px;}
+.models p {line-height:20px; margin:15px 0px; }
+    
+    .col-s1 {width: 8.33%;}
+    .col-s2 {width: 16.66%;}
+    .col-s3 {width: 25%;}
+    .col-s4 {width: 33.33%;}
+    .col-s5 {width: 41.66%;}
+    .col-s6 {width: 50%;}
+    .col-s7 {width: 58.33%;}
+    .col-s8 {width: 66.66%;}
+    .col-s9 {width: 75%;}
+    .col-s10 {width: 83.33%;}
+    .col-s11 {width: 91.66%;}
+    .col-s12 {width: 100%;}
+    
+    .col-xs1{width:8.33% }
+    .col-xs10{width:83.33% }
+
+}
+
+/* ------------------------------ For mobile phones ----------------------------- */
+@media only screen and (max-width: 689px) {
+
+[class*="col-"] {width: 100%;}
+
+.title {font-size:40px; text-align:center; line-height:45px; }
+.text {font-size:14px;}
+
+.logo {top:10%; left:5%;}
+.menu{ display:none;}
+.caption {position:relative; top:0; left:0; padding:5%; text-align:justify;}
+.subtitle {font-size:14px; }
+.button {margin:5% 0% 5% 30%;}
+
+.minimenu{display:block;}
+
+#about {height:210px; }
+.about {height:320px; text-align:justify;}
+.about h2 {margin:5%; }
+.about p {margin:5%; line-height:22px;}
+.about img {display:none;}
+
+.also {height:600px; text-align:justify; }
+.also h2 {margin:5%;}
+.also p {margin:5%; line-height:22px;}
+
+.models h2 {margin:20px 0px;}
+.models h3 {font-size:30px; margin:20px 0px; text-align:center;}
+.models p {line-height:20px; font-size:15px; margin:15px 0px; }
+
+.icon-horizontal {margin:5% 0% 5% 35%;}
+.icon-vertical {margin:5% 0% 5% 35%;}
+.icon-vertical button {display:inline-block;}
+  
+.col-xs1{width:8.33% }
+.col-xs10{width:83.33% }
+.col-xs6{width:50% }
+
+
+}
