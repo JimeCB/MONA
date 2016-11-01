@@ -13,6 +13,7 @@ $font_text:'Poppins', sans-serif;
 $font_logo : 'Megrim', cursive;
 $font_modelname: 'Open Sans', sans-serif;
 $pink:#ff80b2;
+$light_pink:#feeaea;
 $light_blue:#eafefe;
 $dark_gray:#585858;
 
@@ -24,7 +25,7 @@ $dark_gray:#585858;
    position:relative; float: left;
 }
 body {
-  background:white; color: black; font-family: $font_text; font-size: 1em;
+  background-color: white; color: black; font-family: $font_text; font-size: 1em;
 }
 .row {
   position:relative; width:100%; clear:both;
@@ -42,6 +43,7 @@ img {
 /* ------------------Header-------------------- */
 
 .home {
+  background-color: $light_blue;
   position:relative;
   img {
     width:100%; height:auto;
@@ -54,7 +56,7 @@ img {
   }
 }
 .menu {
-  position:absolute; top:15%; left:30%;
+  position:absolute; top:15%; left:30%; z-index: 10;
   ul {
     list-style:none; margin:0; padding:0;
     li {
@@ -70,7 +72,7 @@ img {
 
 }
 .caption {
-  position: absolute; top: 35%; left:10%;
+  position: absolute; top: 35%; left:10%; z-index: 10;
 }
 .button {
   margin-top:3em;
@@ -82,12 +84,16 @@ img {
   }
 }
 .minimenu{
-  display:none; position: relative; margin: 0; background:$dark_gray; height: 3.5em;
-  div {
-    overflow: hidden; position: relative; font-size:2em; color: white; text-align:left; font-weight:bold; padding:1ex;
-  }
-  select {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;
+  display: none;
+  position:fixed;
+  width: 100%;
+  text-align: right;
+  background-color: $light_pink;
+  z-index: 10;
+  i{
+    color: black;
+    font-size: 2em;
+    padding: 0.5ex;
   }
 }
 
@@ -426,6 +432,13 @@ img {
   [class*="col-"] {
     width: 100%;
   }
+
+  #icon-home {
+    display: block;
+  }
+  .home{
+    top:2.2em;
+  }
   .title {
     font-size:2.5em; text-align:center; line-height:1.2em;
   }
@@ -433,7 +446,7 @@ img {
     font-size: 0.8em;
   }
   .logo {
-    top:10%; left:5%;
+    top:5%; left:5%;
   }
   .menu{
     display:none;
@@ -448,7 +461,7 @@ img {
     margin:5% 0% 5% 30%;
   }
   .minimenu{
-    display:block;
+  display: block;
   }
   #about {
     height:15em;

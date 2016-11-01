@@ -12,14 +12,15 @@ function change_img(index) {
 		document.getElementById('img_model1').src = 'images/model'+index+'.png';
 		for(var i = 1; i < 5; i++) {
 			document.getElementById('icon-v' + i).style.color = (i == index) ? '#ff80b2' : "black";}
-	}else{
-		document.getElementById('img_model2').src = 'images/model'+index+'.png';
-		for(var i = 5; i < 9; i++) {
+	}else {
+		document.getElementById('img_model2').src = 'images/model' + index + '.png';
+		for (var i = 5; i < 9; i++) {
 			document.getElementById('icon-v' + i).style.color = (i == index) ? '#ff80b2' : "black";}
 	}
-
-
 }
+
+
+
 
 
 
