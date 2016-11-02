@@ -84,12 +84,12 @@ img {
   }
 }
 .minimenu{
-  display: none;
+  display: block;
   position:fixed;
   width: 100%;
   text-align: right;
   background-color: $light_pink;
-  z-index: 10;
+  z-index: 15;
   i{
     color: black;
     font-size: 2em;
