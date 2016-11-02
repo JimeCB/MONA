@@ -89,31 +89,17 @@ img {
   font-family: "Cormorant Garamond", serif; }
 
 /* ------------------Header-------------------- */
-.caption {
-  position: absolute;
-  top: 35%;
-  left: 10%;
-  z-index: 10; }
-
-.button {
-  margin-top: 3em; }
-  .button a {
-    background-color: #eafefe;
-    padding: 0.8em 1.8em; }
-    .button a:hover {
-      color: white;
-      background-color: black; }
-
 .minimenu {
-  display: block;
   position: fixed;
-  background-color: #eafefe;
+  top: 0;
   width: 100%;
   height: 4em;
-  z-index: 15;
-  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5); }
+  background-color: #eafefe;
+  z-index: 100;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5); }
   .minimenu i {
     position: absolute;
     top: 20%;
@@ -153,6 +139,21 @@ img {
   .home img {
     width: 100%;
     height: auto; }
+
+.caption {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  z-index: 10; }
+
+.button {
+  margin-top: 3em; }
+  .button a {
+    background-color: #eafefe;
+    padding: 0.8em 1.8em; }
+    .button a:hover {
+      color: white;
+      background-color: black; }
 
 /* ------------------Content------------------- */
 #about {
@@ -392,11 +393,9 @@ img {
     font-size: 0.8em; }
 
   .logo {
-    top: 10%;
     left: 5%; }
 
   .menu {
-    top: 10%;
     left: 30%; }
     .menu ul li {
       padding: 0.5em; }
@@ -472,7 +471,7 @@ img {
   .col-xs10 {
     width: 83.33%; } }
 /* ------------------------------ For mobile phones ----------------------------- */
-@media only screen and (max-width: 689px) {
+@media only screen and (min-width: 320px) and (max-width: 689px) {
   [class*="col-"] {
     width: 100%; }
 
@@ -491,7 +490,6 @@ img {
     font-size: 0.8em; }
 
   .logo {
-    top: 5%;
     left: 5%; }
 
   .menu {
@@ -508,7 +506,7 @@ img {
     font-size: 0.8em; }
 
   .button {
-    margin: 5% 0% 5% 30%; }
+    margin: 5% 0 5% 30%; }
 
   .minimenu {
     display: block; }
@@ -548,10 +546,10 @@ img {
       margin: 5%; }
 
   .icon-horizontal {
-    margin: 5% 0% 5% 35%; }
+    margin: 5% 0 5% 35%; }
 
   .icon-vertical {
-    margin: 5% 0% 5% 35%; }
+    margin: 5% 0 5% 35%; }
 
   .icon-vertical button {
     display: inline-block; }
