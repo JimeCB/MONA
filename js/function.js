@@ -19,7 +19,23 @@ function change_img(index) {
 	}
 }
 
+$('#home-link').click(function(){
+	$('html, body').animate({
+		scrollTop: $(".home").offset().top
+	}, 800);
+});
 
+$('#about-link').click(function(){
+	$('html, body').animate({
+		scrollTop: $("#bm-about").offset().top
+	}, 800);
+});
+
+$('#models-link').click(function(){
+	$('html, body').animate({
+		scrollTop: $("#bm-models").offset().top
+	}, 800);
+});
 
 
 

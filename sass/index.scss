@@ -42,35 +42,8 @@ img {
 
 /* ------------------Header-------------------- */
 
-.home {
-  background-color: $light_blue;
-  position:relative;
-  img {
-    width:100%; height:auto;
-  }
-}
-.logo {
-  position:absolute; top:10%; left:10%;
-  h2 {
-    font-family: $font_logo; font-size:4em;
-  }
-}
-.menu {
-  position:absolute; top:15%; left:30%; z-index: 10;
-  ul {
-    list-style:none; margin:0; padding:0;
-    li {
-      display:inline-block; padding:0 1.5em;
-      a {
-        &:hover {
-          color:white;
-        }
-      }
-    }
 
-  }
 
-}
 .caption {
   position: absolute; top: 35%; left:10%; z-index: 10;
 }
@@ -86,14 +59,54 @@ img {
 .minimenu{
   display: block;
   position:fixed;
+  background-color: $light_blue;
   width: 100%;
-  text-align: right;
-  background-color: $light_pink;
+  height: 4em;
   z-index: 15;
   i{
-    color: black;
-    font-size: 2em;
-    padding: 0.5ex;
+    position: absolute;
+    top:20%;
+    right: 10%;
+    font-size: 30px;
+    cursor: pointer;
+    &:hover {
+      color:white;
+    }
+  }
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+}
+.logo {
+  position:absolute; top:-5px; left:10%;
+  h2 {
+    font-family: $font_logo; font-size:4em;
+  }
+}
+.menu {
+  position:absolute; top:30%; left: 25%; z-index: 10;
+  cursor: pointer;
+  ul {
+    list-style:none; margin:0; padding:0;
+    li {
+      display:inline-block; padding:0 1.5em;
+      a {
+        &:hover {
+          color:white;
+        }
+      }
+    }
+
+  }
+
+}
+
+
+.home {
+  background-color: $light_blue;
+  position:relative;
+  img {
+    width:100%; height:auto;
   }
 }
 
