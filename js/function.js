@@ -27,13 +27,13 @@ $('#home-link').click(function(){
 
 $('#about-link').click(function(){
 	$('html, body').animate({
-		scrollTop: $("#bm-about").offset().top
+		scrollTop: $("#bm-about").offset().top -50
 	}, 800);
 });
 
 $('#models-link').click(function(){
 	$('html, body').animate({
-		scrollTop: $("#bm-models").offset().top
+		scrollTop: $("#bm-models").offset().top -30
 	}, 800);
 });
 

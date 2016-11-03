@@ -57,6 +57,10 @@ img {
     &:hover {
       color:white;
     }
+    @media only screen and (min-width: 690px) and (max-width: 1251px) {
+      right: 5%;
+    }
+
   }
   -webkit-box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
   -moz-box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
@@ -111,43 +115,95 @@ img {
   height: 14em;
 }
 .about {
-  position:relative; height:35em; text-align:right;
+  position:relative; height:35em; text-align:right; padding: 0 10% 0 10%;
+  @media only screen and (min-width: 690px) and (max-width: 1251px) {
+    padding: 0 5% 0 5%;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 689px) {
+    padding: 10% 5%;
+  }
   h2 {
-    margin:10% 10% 5% 0;
+    margin:10% 0 5% 0;
   }
   p {
-    margin:0 10% 5% 0; line-height: 2.5em;
+    margin:0 0 5% 0; line-height: 2.5em;
+  }
+  img {
+    margin: 0;
   }
 }
 .also {
-  position:relative; height:40em; text-align:left;
+  position:relative; height:40em; text-align:left; padding: 0 10% 0 10%;
+  @media only screen and (min-width: 320px) and (max-width: 1251px) {
+    padding: 0 5% 0 5%;
+  }
+
   h2 {
-    margin:10% 0 5% 10%;
+    margin:10% 0 5% 0;
   }
   p {
-    margin:0 0 5% 10%; line-height:2.5em;
+    padding:0 5% 5% 0; line-height:2.5em;
+  }
+  img{
+    margin: 0;
+    position: absolute;
+    right: 0;
+    @media only screen and (min-width: 320px) and (max-width: 689px) {
+      position: relative;
+      display: block;
+      margin: auto;
+    }
+
   }
 }
 .models {
-  padding-left: 28%;
+  width: 80%;
+  @media only screen and (min-width: 320px) and (max-width: 1251px) {
+    width: 90%;
+  }
+  margin: auto;
   h3 {
-    font-size:3em; margin:0 1ex; font-family: $font_modelname; font-weight:300;
+    font-size:3em; margin:0; font-family: $font_modelname; font-weight:300;
   }
   p {
-    line-height:2.5em; margin:10% 0 0 10%; font-family: $font_modelname; font-weight:300;
+    line-height:2.5em; margin:0; font-family: $font_modelname; font-weight:300;
   }
+
 }
 .models-title{
   text-align: center; padding: 5%;
 }
+.models-text{
+  width: 50%;
+  float: left;
+}
 .models-numbers {
   opacity:0.5
 }
-.elizabeth, .lynee {
-  height: 31em;
+.elizabeth {
+  position: relative;
+  height: 35em;
+  width: 70%;
+  margin: auto;
+  padding-bottom: 5%;
+  @media only screen and (min-width: 320px) and (max-width: 869px) {
+  width: 100%;
+  }
 }
+
+.lynee {
+  @extend .elizabeth;
+  text-align: right;
+  @media only screen and (min-width: 320px) and (max-width: 689px) {
+    text-align: left;
+  }
+  .lynee-text{
+
+  }
+}
+
 .icon-horizontal {
-  margin:0 10% 5% 0;
+  margin:0 0 5% 0;
   button {
     background-color:transparent; cursor:pointer;
   }
@@ -156,7 +212,16 @@ img {
   }
 }
 .icon-vertical {
-  float: left;
+  position: absolute;
+  right: 0;
+  button {
+    display:block; background-color:transparent;cursor:pointer;
+  }
+  i{
+    font-size: 1.8em; margin:0.2em;
+  }
+}
+.icon-vertical2 {
   button {
     display:block; background-color:transparent;cursor:pointer;
   }
@@ -211,10 +276,6 @@ img {
 
 /* ------------------ For desktop normal ------------------------ */
 @media only screen and (min-width: 1252px) and (max-width: 1799px) {
-
-  .models{
-    padding-left: 20%;
-  }
 
   .col-1 {
     width: 8.33%;
@@ -289,16 +350,25 @@ img {
     p {
       line-height:2em;
     }
+    img {
+      max-height: 500px;
+    }
   }
   .models {
-    padding-left: 15%;
     h3 {
-      font-size:2em; margin:5%;
+      font-size:2em;
     }
     p {
       font-size: 2ex; line-height:1.5em;
     }
+    img {
+      max-height: 400px;
+    }
   }
+.elizabeth, .lynee {
+  height: 28em;
+}
+
   .col-s1 {
     width: 8.33%;
   }
@@ -380,15 +450,23 @@ img {
     p {
       line-height:1.8em;
     }
+    img {
+      max-height: 380px;
+    }
   }
   .models{
-    padding-left: 10%;
     h3 {
-      font-size:2em; margin:5%;
+      font-size:2em;
     }
     p {
-      line-height:2em; margin:5%;
+      font-size:1em; line-height:2em;
     }
+    img {
+      max-height: 400px;
+    }
+  }
+  .elizabeth, .lynee {
+    height: 28em;
   }
   .col-s1 {
     width: 8.33%;
@@ -441,9 +519,6 @@ img {
     width: 100%;
   }
 
-  #icon-home {
-    display: block;
-  }
   .home{
     top:2.2em;
   }
@@ -478,10 +553,10 @@ img {
     height:20em;
     text-align:justify;
     h2 {
-      margin:5%;
+      margin:0;
     }
     p {
-      margin:5%; line-height:1.8em;
+      margin:0; line-height:1.8em;
     }
     img {
       display:none;
@@ -491,28 +566,42 @@ img {
   .also {
     height:40em; text-align:justify;
     h2 {
-      margin:5%;
+      padding-bottom: 5%;
     }
     p {
-      margin:5%; line-height:1.8em;
+      padding:0; line-height:1.8em;
+    }
+    img {
+      max-height: 400px;
     }
   }
   .models {
-    padding-left: 10%;
     h3 {
-      font-size:2em; margin: 5%; text-align:center;
+      font-size:2em; margin: 0; text-align:center;
     }
     p {
-      line-height:1.5em; font-size: 1em; margin:5%;
+      line-height:1.5em; font-size: 1em; margin:0;
     }
+    img {
+      max-height: 400px;
+    }
+  }
+  .elizabeth,.lynee{
+    height: 43em;
   }
   .icon-horizontal {
     margin:5% 0 5% 35%;
   }
-  .icon-vertical {
+  .icon-vertical, .icon-vertical2 {
     margin:5% 0 5% 35%;
   }
-  .icon-vertical button {
+
+  .icon-vertical {
+    position: relative;
+
+  }
+
+  .icon-vertical button, .icon-vertical2 button {
     display:inline-block;
   }
   .col-xs1{
@@ -526,3 +615,4 @@ img {
   }
 
 }
+

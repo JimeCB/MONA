@@ -108,6 +108,9 @@ img {
     cursor: pointer; }
     .minimenu i:hover {
       color: white; }
+    @media only screen and (min-width: 690px) and (max-width: 1251px) {
+      .minimenu i {
+        right: 5%; } }
 
 .logo {
   position: absolute;
@@ -162,33 +165,59 @@ img {
 .about {
   position: relative;
   height: 35em;
-  text-align: right; }
+  text-align: right;
+  padding: 0 10% 0 10%; }
+  @media only screen and (min-width: 690px) and (max-width: 1251px) {
+    .about {
+      padding: 0 5% 0 5%; } }
+  @media only screen and (min-width: 320px) and (max-width: 689px) {
+    .about {
+      padding: 10% 5%; } }
   .about h2 {
-    margin: 10% 10% 5% 0; }
+    margin: 10% 0 5% 0; }
   .about p {
-    margin: 0 10% 5% 0;
+    margin: 0 0 5% 0;
     line-height: 2.5em; }
+  .about img {
+    margin: 0; }
 
 .also {
   position: relative;
   height: 40em;
-  text-align: left; }
+  text-align: left;
+  padding: 0 10% 0 10%; }
+  @media only screen and (min-width: 320px) and (max-width: 1251px) {
+    .also {
+      padding: 0 5% 0 5%; } }
   .also h2 {
-    margin: 10% 0 5% 10%; }
+    margin: 10% 0 5% 0; }
   .also p {
-    margin: 0 0 5% 10%;
+    padding: 0 5% 5% 0;
     line-height: 2.5em; }
+  .also img {
+    margin: 0;
+    position: absolute;
+    right: 0; }
+    @media only screen and (min-width: 320px) and (max-width: 689px) {
+      .also img {
+        position: relative;
+        display: block;
+        margin: auto; } }
 
 .models {
-  padding-left: 28%; }
+  width: 80%;
+  margin: auto; }
+  @media only screen and (min-width: 320px) and (max-width: 1251px) {
+    .models {
+      width: 90%; } }
   .models h3 {
     font-size: 3em;
-    margin: 0 1ex;
+    margin: 0;
     font-family: "Open Sans", sans-serif;
     font-weight: 300; }
   .models p {
     line-height: 2.5em;
-    margin: 10% 0 0 10%;
+    margin: 0;
     font-family: "Open Sans", sans-serif;
     font-weight: 300; }
 
@@ -196,14 +225,31 @@ img {
   text-align: center;
   padding: 5%; }
 
+.models-text {
+  width: 50%;
+  float: left; }
+
 .models-numbers {
   opacity: 0.5; }
 
 .elizabeth, .lynee {
-  height: 31em; }
+  position: relative;
+  height: 35em;
+  width: 70%;
+  margin: auto;
+  padding-bottom: 5%; }
+  @media only screen and (min-width: 320px) and (max-width: 869px) {
+    .elizabeth, .lynee {
+      width: 100%; } }
+
+.lynee {
+  text-align: right; }
+  @media only screen and (min-width: 320px) and (max-width: 689px) {
+    .lynee {
+      text-align: left; } }
 
 .icon-horizontal {
-  margin: 0 10% 5% 0; }
+  margin: 0 0 5% 0; }
   .icon-horizontal button {
     background-color: transparent;
     cursor: pointer; }
@@ -212,7 +258,8 @@ img {
     margin: 0.2em; }
 
 .icon-vertical {
-  float: left; }
+  position: absolute;
+  right: 0; }
   .icon-vertical button {
     display: block;
     background-color: transparent;
@@ -220,6 +267,14 @@ img {
   .icon-vertical i {
     font-size: 1.8em;
     margin: 0.2em; }
+
+.icon-vertical2 button {
+  display: block;
+  background-color: transparent;
+  cursor: pointer; }
+.icon-vertical2 i {
+  font-size: 1.8em;
+  margin: 0.2em; }
 
 #icon-h1, #icon-v1, #icon-v5 {
   color: #ff80b2; }
@@ -264,9 +319,6 @@ img {
     width: 100%; } }
 /* ------------------ For desktop normal ------------------------ */
 @media only screen and (min-width: 1252px) and (max-width: 1799px) {
-  .models {
-    padding-left: 20%; }
-
   .col-1 {
     width: 8.33%; }
 
@@ -335,15 +387,19 @@ img {
     height: 31em; }
     .also p {
       line-height: 2em; }
+    .also img {
+      max-height: 500px; }
 
-  .models {
-    padding-left: 15%; }
-    .models h3 {
-      font-size: 2em;
-      margin: 5%; }
-    .models p {
-      font-size: 2ex;
-      line-height: 1.5em; }
+  .models h3 {
+    font-size: 2em; }
+  .models p {
+    font-size: 2ex;
+    line-height: 1.5em; }
+  .models img {
+    max-height: 400px; }
+
+  .elizabeth, .lynee, .lynee {
+    height: 28em; }
 
   .col-s1 {
     width: 8.33%; }
@@ -419,15 +475,19 @@ img {
     height: 22em; }
     .also p {
       line-height: 1.8em; }
+    .also img {
+      max-height: 380px; }
 
-  .models {
-    padding-left: 10%; }
-    .models h3 {
-      font-size: 2em;
-      margin: 5%; }
-    .models p {
-      line-height: 2em;
-      margin: 5%; }
+  .models h3 {
+    font-size: 2em; }
+  .models p {
+    font-size: 1em;
+    line-height: 2em; }
+  .models img {
+    max-height: 400px; }
+
+  .elizabeth, .lynee, .lynee {
+    height: 28em; }
 
   .col-s1 {
     width: 8.33%; }
@@ -475,9 +535,6 @@ img {
   [class*="col-"] {
     width: 100%; }
 
-  #icon-home {
-    display: block; }
-
   .home {
     top: 2.2em; }
 
@@ -518,9 +575,9 @@ img {
     height: 20em;
     text-align: justify; }
     .about h2 {
-      margin: 5%; }
+      margin: 0; }
     .about p {
-      margin: 5%;
+      margin: 0;
       line-height: 1.8em; }
     .about img {
       display: none; }
@@ -529,29 +586,37 @@ img {
     height: 40em;
     text-align: justify; }
     .also h2 {
-      margin: 5%; }
+      padding-bottom: 5%; }
     .also p {
-      margin: 5%;
+      padding: 0;
       line-height: 1.8em; }
+    .also img {
+      max-height: 400px; }
 
-  .models {
-    padding-left: 10%; }
-    .models h3 {
-      font-size: 2em;
-      margin: 5%;
-      text-align: center; }
-    .models p {
-      line-height: 1.5em;
-      font-size: 1em;
-      margin: 5%; }
+  .models h3 {
+    font-size: 2em;
+    margin: 0;
+    text-align: center; }
+  .models p {
+    line-height: 1.5em;
+    font-size: 1em;
+    margin: 0; }
+  .models img {
+    max-height: 400px; }
+
+  .elizabeth, .lynee, .lynee {
+    height: 43em; }
 
   .icon-horizontal {
     margin: 5% 0 5% 35%; }
 
-  .icon-vertical {
+  .icon-vertical, .icon-vertical2 {
     margin: 5% 0 5% 35%; }
 
-  .icon-vertical button {
+  .icon-vertical {
+    position: relative; }
+
+  .icon-vertical button, .icon-vertical2 button {
     display: inline-block; }
 
   .col-xs1 {
