@@ -17,27 +17,96 @@ $light_pink:#feeaea;
 $light_blue:#eafefe;
 $dark_gray:#585858;
 
+$bp-large:    1800px;
+$bp-medium:   1250px;
+$bp-small:    870px;
+$bp-xsmall:   680px;
+$bp-minimum:  320px;
+
+@mixin breakpoint($bp){
+  @if ($bp == large){
+    @media (max-width: $bp-large){ @content }
+  }
+
+  @else if ($bp == medium){
+    @media (max-width: $bp-medium){ @content }
+  }
+
+  @else if ($bp == small){
+    @media (max-width: $bp-small){ @content }
+  }
+
+  @else if ($bp == xsmall){
+    @media (max-width: $bp-xsmall){ @content }
+  }
+
+  @else if ($bp == minimum){
+    @media (max-width: $bp-minimum){ @content }
+  }
+}
+
+
 /* --------------------Global--------------------- */
 * {
   box-sizing: border-box;
 }
 [class*="col-"] {
-   position:relative; float: left;
+  position:relative;
+  float: left;
+  @include breakpoint(xsmall){
+    width: 100%;
+  }
 }
 body {
-  background-color: white; color: black; font-family: $font_text; font-size: 1em;
+  background-color: white;
+  color: black;
+  font-family: $font_text;
+  font-size: 1em;
 }
 .row {
-  position:relative; width:100%; clear:both;
+  position:relative;
+  width:100%;
+  clear:both;
 }
 a{
-  text-decoration: none; color:black;
+  text-decoration: none;
+  color:black;
 }
 img {
-  max-width:100%; height:auto; display: block; margin: auto;
+  max-width:100%;
+  height:auto;
+  display: block;
+  margin: auto;
 }
 .title {
-  font-size:3em; line-height:1em; font-family: $font_title;
+  font-size:3em;
+  line-height:1em;
+  font-family: $font_title;
+  @include breakpoint(medium){
+    font-size: 2em;
+  }
+  @include breakpoint(small){
+    font-size:2em;
+    line-height:1em;
+  }
+  @include breakpoint(xsmall){
+    font-size:2.5em;
+    text-align:center;
+  }
+
+}
+.subtitle{
+  @include breakpoint(medium){
+    font-size: 1em;
+  }
+  @include breakpoint(small){
+    font-size:0.8em;
+  }
+}
+.text{
+  @include breakpoint(medium){
+    font-size:0.8em;
+  }
 }
 
 /* ------------------Header-------------------- */
@@ -52,15 +121,14 @@ img {
     position: absolute;
     top:20%;
     right: 10%;
-    font-size: 30px;
+    font-size: 30px; /*it doesn't work with em*/
     cursor: pointer;
     &:hover {
       color:white;
     }
-    @media only screen and (min-width: 690px) and (max-width: 1251px) {
+    @include breakpoint(medium){
       right: 5%;
     }
-
   }
   -webkit-box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
   -moz-box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
@@ -68,18 +136,36 @@ img {
   box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
 }
 .logo {
-  position:absolute; top:-5px; left:10%;
+  position:absolute;
+  top:-5px; /*use of px for negative value*/
+  left:10%;
+  @include breakpoint(medium){
+    left:5%;
+  }
   h2 {
-    font-family: $font_logo; font-size:4em;
+    font-family: $font_logo;
+    font-size:4em;
   }
 }
 .menu {
-  position:absolute; top:30%; left: 25%; z-index: 10;
+  position:absolute;
+  top:30%;
+  left: 25%;
+  z-index: 10;
   cursor: pointer;
+  @include breakpoint(small){
+    left:30%;
+  }
+  @include breakpoint(xsmall){
+    display:none;
+  }
   ul {
     list-style:none; margin:0; padding:0;
     li {
       display:inline-block; padding:0 1.5em;
+      @include breakpoint(small){
+        padding:0.5em;
+      }
       a {
         &:hover {
           color:white;
@@ -89,89 +175,215 @@ img {
   }
 }
 
+/* ------------------Content------------------- */
 .home {
-  background-color: $light_blue;
   position:relative;
+  @include breakpoint(xsmall){
+    top:3em;
+  }
   img {
-    width:100%; height:auto;
+    width:100%;
+    height:auto;
   }
 }
 .caption {
-  position: absolute; top: 35%; left:10%; z-index: 10;
+  position: absolute;
+  top: 35%;
+  left:10%;
+  z-index: 10;
+  @include breakpoint(medium){
+    top: 30%;
+    left:5%;
+  }
+  @include breakpoint(small){
+    top: 35%;
+  }
+  @include breakpoint(xsmall){
+    position:relative;
+    top:0;
+    left:0;
+    padding:5%;
+    text-align:justify;
+  }
 }
 .button {
   margin-top:3em;
+  @include breakpoint(medium){
+    margin-top:2em;
+  }
+  @include breakpoint(small){
+    display: none;
+  }
+  @include breakpoint(xsmall){
+    margin:5% 0 5% 30%;
+  }
   a {
-    background-color: $light_blue; padding:0.8em 1.8em;
+    background-color: $light_blue;
+    padding:0.8em 1.8em;
     &:hover {
-      color:white; background-color:black;
+      color:white;
+      background-color:black;
     }
   }
 }
 
-/* ------------------Content------------------- */
-
 #about{
   height: 14em;
+  @include breakpoint(medium){
+    height:10em;
+  }
+  @include breakpoint(small){
+    height:11em;
+  }
+  @include breakpoint(xsmall){
+    height:15em;
+  }
 }
 .about {
-  position:relative; height:35em; text-align:right; padding: 0 10% 0 10%;
-  @media only screen and (min-width: 690px) and (max-width: 1251px) {
+  position:relative;
+  height:35em;
+  text-align:right;
+  padding: 0 10% 0 10%;
+  @include breakpoint(medium){
     padding: 0 5% 0 5%;
+    height:25em;
   }
-  @media only screen and (min-width: 320px) and (max-width: 689px) {
+  @include breakpoint(small){
+    height: 22em;
+  }
+  @include breakpoint(xsmall){
     padding: 10% 5%;
+    height:20em;
+    text-align:justify;
   }
   h2 {
     margin:10% 0 5% 0;
+    @include breakpoint(xsmall){
+      margin:0;
+    }
   }
   p {
-    margin:0 0 5% 0; line-height: 2.5em;
+    margin:0 0 5% 0;
+    line-height: 2.5em;
+    @include breakpoint(medium){
+      line-height:2em;
+    }
+    @include breakpoint(small){
+      line-height: 1.8em;
+    }
+    @include breakpoint(xsmall){
+      margin:0;
+      line-height:1.8em;
+    }
   }
   img {
     margin: 0;
+    @include breakpoint(xsmall){
+      display:none;
+    }
   }
 }
 .also {
-  position:relative; height:40em; text-align:left; padding: 0 10% 0 10%;
-  @media only screen and (min-width: 320px) and (max-width: 1251px) {
+  position:relative;
+  height:40em;
+  text-align:left;
+  padding: 0 10% 0 10%;
+  @include breakpoint(medium){
     padding: 0 5% 0 5%;
+    height:31em;
   }
-
+  @include breakpoint(small){
+    height:22em;
+  }
+  @include breakpoint(xsmall){
+    height:40em;
+    text-align:justify;
+  }
   h2 {
     margin:10% 0 5% 0;
+    @include breakpoint(xsmall){
+      padding-bottom: 5%;
+    }
   }
   p {
-    padding:0 5% 5% 0; line-height:2.5em;
+    padding:0 5% 5% 0;
+    line-height:2.5em;
+    @include breakpoint(medium){
+      line-height:2em;
+    }
+    @include breakpoint(small){
+      line-height:1.8em;
+    }
+    @include breakpoint(xsmall){
+      padding:0;
+      line-height:1.8em;
+    }
   }
   img{
     margin: 0;
     position: absolute;
     right: 0;
-    @media only screen and (min-width: 320px) and (max-width: 689px) {
+    @include breakpoint(medium){
+      max-height: 500px;
+    }
+    @include breakpoint(small){
+      max-height: 380px;
+    }
+    @include breakpoint(xsmall){
+      max-height: 400px;
       position: relative;
       display: block;
       margin: auto;
     }
-
   }
 }
 .models {
   width: 80%;
-  @media only screen and (min-width: 320px) and (max-width: 1251px) {
+  margin: auto;
+  @include breakpoint(medium){
     width: 90%;
   }
-  margin: auto;
   h3 {
-    font-size:3em; margin:0; font-family: $font_modelname; font-weight:300;
+    font-size:3em;
+    margin:0;
+    font-family: $font_modelname;
+    font-weight:300;
+    @include breakpoint(medium){
+      font-size:2em;
+    }
+    @include breakpoint(xsmall){
+      margin: 0;
+      text-align:center;
+    }
   }
   p {
-    line-height:2.5em; margin:0; font-family: $font_modelname; font-weight:300;
+    line-height:2.5em;
+    margin:0;
+    font-family: $font_modelname;
+    font-weight:300;
+    @include breakpoint(medium){
+      font-size: 2ex;
+      line-height:1.5em;
+    }
+    @include breakpoint(small){
+      font-size:1em;
+      line-height:2em;
+    }
+    @include breakpoint(xsmall){
+      line-height:1.5em;
+      margin:0;
+    }
+  }
+  img {
+    @include breakpoint(medium){
+      max-height: 400px;
+    }
   }
 
 }
 .models-title{
-  text-align: center; padding: 5%;
+  text-align: center;
+  padding: 5%;
 }
 .models-text{
   width: 50%;
@@ -186,47 +398,64 @@ img {
   width: 70%;
   margin: auto;
   padding-bottom: 5%;
-  @media only screen and (min-width: 320px) and (max-width: 869px) {
-  width: 100%;
+  @include breakpoint(medium){
+    height: 28em;
+  }
+  @include breakpoint(small){
+    width: 100%;
+    height: 28em;
+  }
+  @include breakpoint(xsmall){
+    height: 43em;
   }
 }
-
 .lynee {
   @extend .elizabeth;
   text-align: right;
-  @media only screen and (min-width: 320px) and (max-width: 689px) {
+  @include breakpoint(xsmall) {
     text-align: left;
   }
-  .lynee-text{
-
-  }
 }
-
 .icon-horizontal {
   margin:0 0 5% 0;
+  @include breakpoint(xsmall){
+    margin:5% 0 5% 35%;
+  }
   button {
-    background-color:transparent; cursor:pointer;
+    background-color:transparent;
+    cursor:pointer;
   }
   i {
-    font-size:1.8em; margin:0.2em;
+    font-size:1.8em;
+    margin:0.2em;
   }
 }
 .icon-vertical {
+  @include breakpoint(xsmall){
+    position: relative;
+    margin:5% 0 5% 35%;
+  }
+  button {
+    display:block;
+    background-color:transparent;
+    cursor:pointer;
+    @include breakpoint(xsmall){
+      display:inline-block;
+    }
+  }
+  i{
+    font-size: 1.8em;
+    margin:0.2em;
+  }
+
+}
+.icon-vertical-right {
+  @extend .icon-vertical;
   position: absolute;
   right: 0;
-  button {
-    display:block; background-color:transparent;cursor:pointer;
-  }
-  i{
-    font-size: 1.8em; margin:0.2em;
-  }
-}
-.icon-vertical2 {
-  button {
-    display:block; background-color:transparent;cursor:pointer;
-  }
-  i{
-    font-size: 1.8em; margin:0.2em;
+  @include breakpoint(xsmall){
+    position: relative;
+    margin:5% 0 5% 35%;
   }
 }
 #icon-h1, #icon-v1, #icon-v5 {
@@ -234,8 +463,8 @@ img {
 }
 
 /* -----------------------------------Responsive----------------------------------------------- */
-/* ------------------ For desktop large ------------------------- */
-@media only screen and (min-width: 1800px){
+/* ------------------ For desktop extra large ------------------------- */
+@media only screen and (min-width: 1801px){
   .col-l1 {
     width: 8.33%;
   }
@@ -274,9 +503,8 @@ img {
   }
 }
 
-/* ------------------ For desktop normal ------------------------ */
-@media only screen and (min-width: 1252px) and (max-width: 1799px) {
-
+/* ------------------ For desktop large ------------------------ */
+@include breakpoint(large){
   .col-1 {
     width: 8.33%;
   }
@@ -315,60 +543,8 @@ img {
   }
 }
 
-/* ------------------ For tablets - horizontal ------------------------- */
-@media only screen and (min-width: 870px) and (max-width: 1251px) {
-
-  .title {
-    font-size: 2em;
-  }
-  .subtitle {
-    font-size:0.9em;
-  }
-  .text {
-    font-size:0.8em;
-  }
-  .logo {
-    left:5%;
-  }
-  .caption {
-    top: 30%; left:5%;
-  }
-  .button {
-    margin-top:2em;
-  }
-  #about {
-    height:10em;
-  }
-  .about {
-    height:25em;
-    p {
-      line-height:2em;
-    }
-  }
-  .also {
-    height:31em;
-    p {
-      line-height:2em;
-    }
-    img {
-      max-height: 500px;
-    }
-  }
-  .models {
-    h3 {
-      font-size:2em;
-    }
-    p {
-      font-size: 2ex; line-height:1.5em;
-    }
-    img {
-      max-height: 400px;
-    }
-  }
-.elizabeth, .lynee {
-  height: 28em;
-}
-
+/* ------------------ For tablets - horizontal (medium) ------------------------- */
+@include breakpoint(medium){
   .col-s1 {
     width: 8.33%;
   }
@@ -407,67 +583,8 @@ img {
   }
 }
 
-/* ----------------------- For tablets - vertical ------------------------- */
-@media only screen and (min-width: 690px) and (max-width: 869px) {
-
-  .title {
-    font-size:2em; line-height:1em;
-  }
-  .subtitle {
-    font-size:0.8em;
-  }
-  .text {
-    font-size:0.8em;
-  }
-  .logo {
-    left:5%;
-  }
-  .menu{
-    left:30%;
-    ul{
-      li {
-        padding:0.5em;
-      }
-    }
-  }
-  .caption {
-    top: 35%; left:5%;
-  }
-  .button {
-    display:none;
-  }
-  #about {
-    height:11em;
-  }
-  .about {
-    height: 22em;
-    p {
-      line-height: 1.8em;
-    }
-  }
-  .also {
-    height:22em;
-    p {
-      line-height:1.8em;
-    }
-    img {
-      max-height: 380px;
-    }
-  }
-  .models{
-    h3 {
-      font-size:2em;
-    }
-    p {
-      font-size:1em; line-height:2em;
-    }
-    img {
-      max-height: 400px;
-    }
-  }
-  .elizabeth, .lynee {
-    height: 28em;
-  }
+/* ----------------------- For tablets - vertical  (small) ------------------------- */
+@include breakpoint(small){
   .col-s1 {
     width: 8.33%;
   }
@@ -512,98 +629,45 @@ img {
   }
 }
 
-/* ------------------------------ For mobile phones ----------------------------- */
-@media only screen and (min-width: 320px) and (max-width: 689px) {
-
-  [class*="col-"] {
+/* ------------------------------ For mobile phones (xsmall)----------------------------- */
+@media only screen and (min-width: 320px) and (max-width: 680px){
+  .col-s1 {
+    width: 8.33%;
+  }
+  .col-s2 {
+    width: 16.66%;
+  }
+  .col-s3 {
+    width: 25%;
+  }
+  .col-s4 {
+    width: 33.33%;
+  }
+  .col-s5 {
+    width: 41.66%;
+  }
+  .col-s6 {
+    width: 50%;
+  }
+  .col-s7 {
+    width: 58.33%;
+  }
+  .col-s8 {
+    width: 66.66%;
+  }
+  .col-s9 {
+    width: 75%;
+  }
+  .col-s10 {
+    width: 83.33%;
+  }
+  .col-s11 {
+    width: 91.66%;
+  }
+  .col-s12 {
     width: 100%;
   }
 
-  .home{
-    top:2.2em;
-  }
-  .title {
-    font-size:2.5em; text-align:center; line-height:1.2em;
-  }
-  .text {
-    font-size: 0.8em;
-  }
-  .logo {
-    left:5%;
-  }
-  .menu{
-    display:none;
-  }
-  .caption {
-    position:relative; top:0; left:0; padding:5%; text-align:justify;
-  }
-  .subtitle {
-    font-size:0.8em;
-  }
-  .button {
-    margin:5% 0 5% 30%;
-  }
-  .minimenu{
-  display: block;
-  }
-  #about {
-    height:15em;
-  }
-  .about {
-    height:20em;
-    text-align:justify;
-    h2 {
-      margin:0;
-    }
-    p {
-      margin:0; line-height:1.8em;
-    }
-    img {
-      display:none;
-    }
-
-  }
-  .also {
-    height:40em; text-align:justify;
-    h2 {
-      padding-bottom: 5%;
-    }
-    p {
-      padding:0; line-height:1.8em;
-    }
-    img {
-      max-height: 400px;
-    }
-  }
-  .models {
-    h3 {
-      font-size:2em; margin: 0; text-align:center;
-    }
-    p {
-      line-height:1.5em; font-size: 1em; margin:0;
-    }
-    img {
-      max-height: 400px;
-    }
-  }
-  .elizabeth,.lynee{
-    height: 43em;
-  }
-  .icon-horizontal {
-    margin:5% 0 5% 35%;
-  }
-  .icon-vertical, .icon-vertical2 {
-    margin:5% 0 5% 35%;
-  }
-
-  .icon-vertical {
-    position: relative;
-
-  }
-
-  .icon-vertical button, .icon-vertical2 button {
-    display:inline-block;
-  }
   .col-xs1{
     width:8.33%
   }
@@ -613,6 +677,5 @@ img {
   .col-xs6{
     width:50%
   }
-
 }
 

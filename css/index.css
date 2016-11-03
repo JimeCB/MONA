@@ -61,6 +61,9 @@ input, textarea, select {
 [class*="col-"] {
   position: relative;
   float: left; }
+  @media (max-width: 680px) {
+    [class*="col-"] {
+      width: 100%; } }
 
 body {
   background-color: white;
@@ -87,6 +90,28 @@ img {
   font-size: 3em;
   line-height: 1em;
   font-family: "Cormorant Garamond", serif; }
+  @media (max-width: 1250px) {
+    .title {
+      font-size: 2em; } }
+  @media (max-width: 870px) {
+    .title {
+      font-size: 2em;
+      line-height: 1em; } }
+  @media (max-width: 680px) {
+    .title {
+      font-size: 2.5em;
+      text-align: center; } }
+
+@media (max-width: 1250px) {
+  .subtitle {
+    font-size: 1em; } }
+@media (max-width: 870px) {
+  .subtitle {
+    font-size: 0.8em; } }
+
+@media (max-width: 1250px) {
+  .text {
+    font-size: 0.8em; } }
 
 /* ------------------Header-------------------- */
 .minimenu {
@@ -105,17 +130,22 @@ img {
     top: 20%;
     right: 10%;
     font-size: 30px;
+    /*it doesn't work with em*/
     cursor: pointer; }
     .minimenu i:hover {
       color: white; }
-    @media only screen and (min-width: 690px) and (max-width: 1251px) {
+    @media (max-width: 1250px) {
       .minimenu i {
         right: 5%; } }
 
 .logo {
   position: absolute;
   top: -5px;
+  /*use of px for negative value*/
   left: 10%; }
+  @media (max-width: 1250px) {
+    .logo {
+      left: 5%; } }
   .logo h2 {
     font-family: "Megrim", cursive;
     font-size: 4em; }
@@ -126,6 +156,12 @@ img {
   left: 25%;
   z-index: 10;
   cursor: pointer; }
+  @media (max-width: 870px) {
+    .menu {
+      left: 30%; } }
+  @media (max-width: 680px) {
+    .menu {
+      display: none; } }
   .menu ul {
     list-style: none;
     margin: 0;
@@ -133,12 +169,18 @@ img {
     .menu ul li {
       display: inline-block;
       padding: 0 1.5em; }
+      @media (max-width: 870px) {
+        .menu ul li {
+          padding: 0.5em; } }
       .menu ul li a:hover {
         color: white; }
 
+/* ------------------Content------------------- */
 .home {
-  background-color: #eafefe;
   position: relative; }
+  @media (max-width: 680px) {
+    .home {
+      top: 3em; } }
   .home img {
     width: 100%;
     height: auto; }
@@ -148,9 +190,32 @@ img {
   top: 35%;
   left: 10%;
   z-index: 10; }
+  @media (max-width: 1250px) {
+    .caption {
+      top: 30%;
+      left: 5%; } }
+  @media (max-width: 870px) {
+    .caption {
+      top: 35%; } }
+  @media (max-width: 680px) {
+    .caption {
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 5%;
+      text-align: justify; } }
 
 .button {
   margin-top: 3em; }
+  @media (max-width: 1250px) {
+    .button {
+      margin-top: 2em; } }
+  @media (max-width: 870px) {
+    .button {
+      display: none; } }
+  @media (max-width: 680px) {
+    .button {
+      margin: 5% 0 5% 30%; } }
   .button a {
     background-color: #eafefe;
     padding: 0.8em 1.8em; }
@@ -158,48 +223,106 @@ img {
       color: white;
       background-color: black; }
 
-/* ------------------Content------------------- */
 #about {
   height: 14em; }
+  @media (max-width: 1250px) {
+    #about {
+      height: 10em; } }
+  @media (max-width: 870px) {
+    #about {
+      height: 11em; } }
+  @media (max-width: 680px) {
+    #about {
+      height: 15em; } }
 
 .about {
   position: relative;
   height: 35em;
   text-align: right;
   padding: 0 10% 0 10%; }
-  @media only screen and (min-width: 690px) and (max-width: 1251px) {
+  @media (max-width: 1250px) {
     .about {
-      padding: 0 5% 0 5%; } }
-  @media only screen and (min-width: 320px) and (max-width: 689px) {
+      padding: 0 5% 0 5%;
+      height: 25em; } }
+  @media (max-width: 870px) {
     .about {
-      padding: 10% 5%; } }
+      height: 22em; } }
+  @media (max-width: 680px) {
+    .about {
+      padding: 10% 5%;
+      height: 20em;
+      text-align: justify; } }
   .about h2 {
     margin: 10% 0 5% 0; }
+    @media (max-width: 680px) {
+      .about h2 {
+        margin: 0; } }
   .about p {
     margin: 0 0 5% 0;
     line-height: 2.5em; }
+    @media (max-width: 1250px) {
+      .about p {
+        line-height: 2em; } }
+    @media (max-width: 870px) {
+      .about p {
+        line-height: 1.8em; } }
+    @media (max-width: 680px) {
+      .about p {
+        margin: 0;
+        line-height: 1.8em; } }
   .about img {
     margin: 0; }
+    @media (max-width: 680px) {
+      .about img {
+        display: none; } }
 
 .also {
   position: relative;
   height: 40em;
   text-align: left;
   padding: 0 10% 0 10%; }
-  @media only screen and (min-width: 320px) and (max-width: 1251px) {
+  @media (max-width: 1250px) {
     .also {
-      padding: 0 5% 0 5%; } }
+      padding: 0 5% 0 5%;
+      height: 31em; } }
+  @media (max-width: 870px) {
+    .also {
+      height: 22em; } }
+  @media (max-width: 680px) {
+    .also {
+      height: 40em;
+      text-align: justify; } }
   .also h2 {
     margin: 10% 0 5% 0; }
+    @media (max-width: 680px) {
+      .also h2 {
+        padding-bottom: 5%; } }
   .also p {
     padding: 0 5% 5% 0;
     line-height: 2.5em; }
+    @media (max-width: 1250px) {
+      .also p {
+        line-height: 2em; } }
+    @media (max-width: 870px) {
+      .also p {
+        line-height: 1.8em; } }
+    @media (max-width: 680px) {
+      .also p {
+        padding: 0;
+        line-height: 1.8em; } }
   .also img {
     margin: 0;
     position: absolute;
     right: 0; }
-    @media only screen and (min-width: 320px) and (max-width: 689px) {
+    @media (max-width: 1250px) {
       .also img {
+        max-height: 500px; } }
+    @media (max-width: 870px) {
+      .also img {
+        max-height: 380px; } }
+    @media (max-width: 680px) {
+      .also img {
+        max-height: 400px;
         position: relative;
         display: block;
         margin: auto; } }
@@ -207,7 +330,7 @@ img {
 .models {
   width: 80%;
   margin: auto; }
-  @media only screen and (min-width: 320px) and (max-width: 1251px) {
+  @media (max-width: 1250px) {
     .models {
       width: 90%; } }
   .models h3 {
@@ -215,11 +338,33 @@ img {
     margin: 0;
     font-family: "Open Sans", sans-serif;
     font-weight: 300; }
+    @media (max-width: 1250px) {
+      .models h3 {
+        font-size: 2em; } }
+    @media (max-width: 680px) {
+      .models h3 {
+        margin: 0;
+        text-align: center; } }
   .models p {
     line-height: 2.5em;
     margin: 0;
     font-family: "Open Sans", sans-serif;
     font-weight: 300; }
+    @media (max-width: 1250px) {
+      .models p {
+        font-size: 2ex;
+        line-height: 1.5em; } }
+    @media (max-width: 870px) {
+      .models p {
+        font-size: 1em;
+        line-height: 2em; } }
+    @media (max-width: 680px) {
+      .models p {
+        line-height: 1.5em;
+        margin: 0; } }
+  @media (max-width: 1250px) {
+    .models img {
+      max-height: 400px; } }
 
 .models-title {
   text-align: center;
@@ -238,18 +383,28 @@ img {
   width: 70%;
   margin: auto;
   padding-bottom: 5%; }
-  @media only screen and (min-width: 320px) and (max-width: 869px) {
+  @media (max-width: 1250px) {
     .elizabeth, .lynee {
-      width: 100%; } }
+      height: 28em; } }
+  @media (max-width: 870px) {
+    .elizabeth, .lynee {
+      width: 100%;
+      height: 28em; } }
+  @media (max-width: 680px) {
+    .elizabeth, .lynee {
+      height: 43em; } }
 
 .lynee {
   text-align: right; }
-  @media only screen and (min-width: 320px) and (max-width: 689px) {
+  @media (max-width: 680px) {
     .lynee {
       text-align: left; } }
 
 .icon-horizontal {
   margin: 0 0 5% 0; }
+  @media (max-width: 680px) {
+    .icon-horizontal {
+      margin: 5% 0 5% 35%; } }
   .icon-horizontal button {
     background-color: transparent;
     cursor: pointer; }
@@ -257,31 +412,35 @@ img {
     font-size: 1.8em;
     margin: 0.2em; }
 
-.icon-vertical {
-  position: absolute;
-  right: 0; }
-  .icon-vertical button {
-    display: block;
-    background-color: transparent;
-    cursor: pointer; }
-  .icon-vertical i {
-    font-size: 1.8em;
-    margin: 0.2em; }
-
-.icon-vertical2 button {
+@media (max-width: 680px) {
+  .icon-vertical, .icon-vertical-right {
+    position: relative;
+    margin: 5% 0 5% 35%; } }
+.icon-vertical button, .icon-vertical-right button {
   display: block;
   background-color: transparent;
   cursor: pointer; }
-.icon-vertical2 i {
+  @media (max-width: 680px) {
+    .icon-vertical button, .icon-vertical-right button {
+      display: inline-block; } }
+.icon-vertical i, .icon-vertical-right i {
   font-size: 1.8em;
   margin: 0.2em; }
+
+.icon-vertical-right {
+  position: absolute;
+  right: 0; }
+  @media (max-width: 680px) {
+    .icon-vertical-right {
+      position: relative;
+      margin: 5% 0 5% 35%; } }
 
 #icon-h1, #icon-v1, #icon-v5 {
   color: #ff80b2; }
 
 /* -----------------------------------Responsive----------------------------------------------- */
-/* ------------------ For desktop large ------------------------- */
-@media only screen and (min-width: 1800px) {
+/* ------------------ For desktop extra large ------------------------- */
+@media only screen and (min-width: 1801px) {
   .col-l1 {
     width: 8.33%; }
 
@@ -317,8 +476,8 @@ img {
 
   .col-l12 {
     width: 100%; } }
-/* ------------------ For desktop normal ------------------------ */
-@media only screen and (min-width: 1252px) and (max-width: 1799px) {
+/* ------------------ For desktop large ------------------------ */
+@media (max-width: 1800px) {
   .col-1 {
     width: 8.33%; }
 
@@ -354,53 +513,8 @@ img {
 
   .col-12 {
     width: 100%; } }
-/* ------------------ For tablets - horizontal ------------------------- */
-@media only screen and (min-width: 870px) and (max-width: 1251px) {
-  .title {
-    font-size: 2em; }
-
-  .subtitle {
-    font-size: 0.9em; }
-
-  .text {
-    font-size: 0.8em; }
-
-  .logo {
-    left: 5%; }
-
-  .caption {
-    top: 30%;
-    left: 5%; }
-
-  .button {
-    margin-top: 2em; }
-
-  #about {
-    height: 10em; }
-
-  .about {
-    height: 25em; }
-    .about p {
-      line-height: 2em; }
-
-  .also {
-    height: 31em; }
-    .also p {
-      line-height: 2em; }
-    .also img {
-      max-height: 500px; }
-
-  .models h3 {
-    font-size: 2em; }
-  .models p {
-    font-size: 2ex;
-    line-height: 1.5em; }
-  .models img {
-    max-height: 400px; }
-
-  .elizabeth, .lynee, .lynee {
-    height: 28em; }
-
+/* ------------------ For tablets - horizontal (medium) ------------------------- */
+@media (max-width: 1250px) {
   .col-s1 {
     width: 8.33%; }
 
@@ -436,59 +550,8 @@ img {
 
   .col-s12 {
     width: 100%; } }
-/* ----------------------- For tablets - vertical ------------------------- */
-@media only screen and (min-width: 690px) and (max-width: 869px) {
-  .title {
-    font-size: 2em;
-    line-height: 1em; }
-
-  .subtitle {
-    font-size: 0.8em; }
-
-  .text {
-    font-size: 0.8em; }
-
-  .logo {
-    left: 5%; }
-
-  .menu {
-    left: 30%; }
-    .menu ul li {
-      padding: 0.5em; }
-
-  .caption {
-    top: 35%;
-    left: 5%; }
-
-  .button {
-    display: none; }
-
-  #about {
-    height: 11em; }
-
-  .about {
-    height: 22em; }
-    .about p {
-      line-height: 1.8em; }
-
-  .also {
-    height: 22em; }
-    .also p {
-      line-height: 1.8em; }
-    .also img {
-      max-height: 380px; }
-
-  .models h3 {
-    font-size: 2em; }
-  .models p {
-    font-size: 1em;
-    line-height: 2em; }
-  .models img {
-    max-height: 400px; }
-
-  .elizabeth, .lynee, .lynee {
-    height: 28em; }
-
+/* ----------------------- For tablets - vertical  (small) ------------------------- */
+@media (max-width: 870px) {
   .col-s1 {
     width: 8.33%; }
 
@@ -530,94 +593,43 @@ img {
 
   .col-xs10 {
     width: 83.33%; } }
-/* ------------------------------ For mobile phones ----------------------------- */
-@media only screen and (min-width: 320px) and (max-width: 689px) {
-  [class*="col-"] {
+/* ------------------------------ For mobile phones (xsmall)----------------------------- */
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  .col-s1 {
+    width: 8.33%; }
+
+  .col-s2 {
+    width: 16.66%; }
+
+  .col-s3 {
+    width: 25%; }
+
+  .col-s4 {
+    width: 33.33%; }
+
+  .col-s5 {
+    width: 41.66%; }
+
+  .col-s6 {
+    width: 50%; }
+
+  .col-s7 {
+    width: 58.33%; }
+
+  .col-s8 {
+    width: 66.66%; }
+
+  .col-s9 {
+    width: 75%; }
+
+  .col-s10 {
+    width: 83.33%; }
+
+  .col-s11 {
+    width: 91.66%; }
+
+  .col-s12 {
     width: 100%; }
-
-  .home {
-    top: 2.2em; }
-
-  .title {
-    font-size: 2.5em;
-    text-align: center;
-    line-height: 1.2em; }
-
-  .text {
-    font-size: 0.8em; }
-
-  .logo {
-    left: 5%; }
-
-  .menu {
-    display: none; }
-
-  .caption {
-    position: relative;
-    top: 0;
-    left: 0;
-    padding: 5%;
-    text-align: justify; }
-
-  .subtitle {
-    font-size: 0.8em; }
-
-  .button {
-    margin: 5% 0 5% 30%; }
-
-  .minimenu {
-    display: block; }
-
-  #about {
-    height: 15em; }
-
-  .about {
-    height: 20em;
-    text-align: justify; }
-    .about h2 {
-      margin: 0; }
-    .about p {
-      margin: 0;
-      line-height: 1.8em; }
-    .about img {
-      display: none; }
-
-  .also {
-    height: 40em;
-    text-align: justify; }
-    .also h2 {
-      padding-bottom: 5%; }
-    .also p {
-      padding: 0;
-      line-height: 1.8em; }
-    .also img {
-      max-height: 400px; }
-
-  .models h3 {
-    font-size: 2em;
-    margin: 0;
-    text-align: center; }
-  .models p {
-    line-height: 1.5em;
-    font-size: 1em;
-    margin: 0; }
-  .models img {
-    max-height: 400px; }
-
-  .elizabeth, .lynee, .lynee {
-    height: 43em; }
-
-  .icon-horizontal {
-    margin: 5% 0 5% 35%; }
-
-  .icon-vertical, .icon-vertical2 {
-    margin: 5% 0 5% 35%; }
-
-  .icon-vertical {
-    position: relative; }
-
-  .icon-vertical button, .icon-vertical2 button {
-    display: inline-block; }
 
   .col-xs1 {
     width: 8.33%; }
