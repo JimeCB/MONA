@@ -20,7 +20,7 @@ $dark_gray:#585858;
 $bp-large:    1800px;
 $bp-medium:   1250px;
 $bp-small:    870px;
-$bp-xsmall:   680px;
+$bp-xsmall:   580px;
 $bp-minimum:  320px;
 
 @mixin breakpoint($bp){
@@ -62,6 +62,7 @@ body {
   color: black;
   font-family: $font_text;
   font-size: 1em;
+  min-width: 20em;
 }
 .row {
   position:relative;
@@ -547,7 +548,7 @@ img {
   }
 }
 /* ----------------------- For tablets - vertical  (small) ------------------------- */
-@media only screen and (min-width: 681px) and (max-width: 870px) {
+@media only screen and (min-width: 581px) and (max-width: 870px) {
   .col-s1 {
     width: 8.33%;
   }
@@ -592,7 +593,7 @@ img {
   }
 }
 /* ------------------------------ For mobile phones (xsmall)----------------------------- */
-@media only screen and (min-width: 330px) and (max-width: 680px) {
+@media only screen and (min-width: 330px) and (max-width: 580px) {
   .col-xs1{
     width:8.33%
   }
