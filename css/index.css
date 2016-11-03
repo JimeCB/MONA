@@ -294,7 +294,7 @@ img {
         max-height: 380px; } }
     @media (max-width: 680px) {
       .also img {
-        max-height: 400px;
+        max-height: 100%;
         position: relative;
         display: block;
         margin: auto;
@@ -339,6 +339,7 @@ img {
       max-height: 400px; } }
   @media (max-width: 680px) {
     .models img {
+      max-height: 100%;
       width: 100%; } }
 
 .models-numbers {
