@@ -10,7 +10,6 @@ input, textarea, select {margin:0; padding:0;}
 /* ------------------Variables-------------------- */
 $font_title:'Cormorant Garamond', serif;
 $font_text:'Poppins', sans-serif;
-$font_logo : 'Megrim', cursive;
 $font_modelname: 'Open Sans', sans-serif;
 $pink:#ff80b2;
 $light_pink:#feeaea;
@@ -106,12 +105,9 @@ img {
 
 /* ------------------Header-------------------- */
 .minimenu{
-  position: fixed;
-  top:0;
   width: 100%;
   height: 4em;
-  background-color: $light_blue;
-  z-index: 100;
+  background-color: $light_pink;
   i{
     position: absolute;
     top:20%;
@@ -125,54 +121,19 @@ img {
       right: 5%;
     }
   }
-  -webkit-box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
-  -moz-box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
-  -o-box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
-  box-shadow: 0 0 30px 0 rgba(0,0,0,0.5);
 }
 .logo {
   position:absolute;
-  top:-5px; /*use of px for negative value*/
   left:10%;
   @include breakpoint(medium){
     left:5%;
   }
-  h2 {
-    font-family: $font_logo;
-    font-size:4em;
-  }
 }
-.menu {
-  position:absolute;
-  top:30%;
-  left: 25%;
-  z-index: 10;
-  cursor: pointer;
-  @include breakpoint(small){
-    left:30%;
-  }
-  @include breakpoint(xsmall){
-    display:none;
-  }
-  ul {
-    list-style:none; margin:0; padding:0;
-    li {
-      display:inline-block; padding:0 1.5em;
-      a {
-        &:hover {
-          color:white;
-        }
-      }
-    }
-  }
-}
+
 
 /* ------------------Content------------------- */
 .home {
   position:relative;
-  @include breakpoint(xsmall){
-    top:3em;
-  }
   img {
     width:100%;
     height:auto;
@@ -180,11 +141,10 @@ img {
 }
 .caption {
   position: absolute;
-  top: 35%;
+  top: 25%;
   left:10%;
   z-index: 10;
   @include breakpoint(medium){
-    top: 30%;
     left:5%;
   }
   @include breakpoint(xsmall){
@@ -312,32 +272,54 @@ img {
   }
 }
 .models {
-  width: 50%;
-  margin: auto;
-  @include breakpoint(medium){
-    width: 60%;
-  }
-  @include breakpoint(small){
-    width: 80%;
+  h2{
+    text-align: center;
+    padding: 5%;
   }
   @include breakpoint(xsmall){
     width: 90%;
+    margin: auto;
   }
-  h2{
-    text-align: center;
-    padding: 10%;
+}
+
+.model {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: center;
+
+  position: relative;
+  height: 35em;
+  padding-bottom: 5%;
+  @include breakpoint(medium){
+    height: 28em;
+  }
+  @include breakpoint(xsmall){
+    height: 45em;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+
   }
   h3 {
     font-size:2em;
     font-family: $font_modelname;
     font-weight:300;
-    padding: 5%;
+    padding: 5% 5% 5% 0;
     @include breakpoint(xsmall){
       text-align:center;
     }
   }
   p {
-    width: 50%;
+    width: 80px;
     float: left;
     line-height:2em;
     font-family: $font_modelname;
@@ -345,10 +327,11 @@ img {
     @include breakpoint(xsmall){
       font-size: 0.9em;
       line-height:1.5em;
-      width: 50%;
     }
   }
   img {
+    margin: 0;
+    padding: 0 1%;
     @include breakpoint(medium){
       max-height: 400px;
     }
@@ -357,31 +340,10 @@ img {
       width: 100%;
     }
   }
-
 }
 
 .models-numbers {
   opacity:0.5
-}
-.elizabeth {
-  position: relative;
-  height: 35em;
-  padding-bottom: 5%;
-  @include breakpoint(medium){
-    height: 28em;
-  }
-  @include breakpoint(xsmall){
-    height: 42em;
-  }
-}
-.lynee {
-  @extend .elizabeth;
-  text-align: right;
-  @include breakpoint(xsmall) {
-    height: 45em;
-    text-align: left;
-    padding-bottom: 10%;
-  }
 }
 .icon-horizontal {
   margin:0 0 5% 0;
@@ -398,9 +360,10 @@ img {
   }
 }
 .icon-vertical {
+  padding: 2% 1%;
   @include breakpoint(xsmall){
     position: relative;
-    margin:5% 0 5% 30%;
+    margin:5% 0 5% 25%;
   }
   button {
     display:block;
@@ -416,15 +379,7 @@ img {
   }
 
 }
-.icon-vertical-right {
-  @extend .icon-vertical;
-  position: absolute;
-  right: 0;
-  @include breakpoint(xsmall){
-    position: relative;
-    margin:5% 0 5% 30%;
-  }
-}
+
 #icon-h1, #icon-v1, #icon-v5 {
   color:$pink;
 }

@@ -6,13 +6,13 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: lightgray;
-  position: relative; }
-
-.modalview {
+  position: relative;
   -webkit-perspective: 1800px;
   -moz-perspective: 1800px;
   -o-perspective: 1800px;
-  perspective: 1800px;
+  perspective: 1800px; }
+
+.modalview {
   position: fixed; }
 
 .container {
@@ -26,7 +26,6 @@ html, body {
   transition: all 0.5s ease; }
 
 .animate {
-  overflow: hidden;
   -webkit-transform-origin: 50% 120%;
   -moz-transform-origin: 50% 120%;
   -o-transform-origin: 50% 120%;
@@ -35,6 +34,9 @@ html, body {
   -moz-transform: translateZ(-1500px) rotateX(80deg);
   -o-transform: translateZ(-1500px) rotateX(80deg);
   transform: translateZ(-1500px) rotateX(80deg); }
+
+.overflow {
+  overflow: hidden; }
 
 .shadow {
   background-color: #585858;

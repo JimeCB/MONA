@@ -1,33 +1,40 @@
 
-function scrollY() {
-    return window.pageYOffset || window.document.documentElement.scrollTop;
-}
-
 $(document).ready(function(){
 
-    $('#icon-menu, #home-mobile').click(function () {
-        docScroll = scrollY();
-
-        $('.container').toggleClass('animate');
-        $('.shadow').toggleClass('animate-shadow');
-        $('.perspective').toggleClass('modalview');
-        $('.wrapper').toggleClass('wrapper-animate');
-        $('.nav').toggleClass('nav-animate');
-
-        $('.container').scrollTop(docScroll);
+    $('#icon-menu').click(function () {
+        $('.container').addClass('animate').addClass('overflow');
+        $('.shadow').addClass('animate-shadow');
+        $('.wrapper').addClass('wrapper-animate');
+        $('.perspective').addClass('modalview');
+        $('.nav').addClass('nav-animate');
     });
 
-    $( '#about-mobile, #models-mobile, .wrapper' ).click(function(ev) {
+    $( '#home-link, #about-link, #models-link, .wrapper' ).click(function(ev) {
         ev.stopPropagation();
         ev.preventDefault();
+        $('.nav').removeClass('nav-animate');
+        $('.perspective').removeClass('modalview');
+        $('.wrapper').removeClass('wrapper-animate');
+        $('.shadow').removeClass('animate-shadow');
+        $('.container').removeClass('animate');
 
-        if($('.container').hasClass('animate')){
-            $('.container').removeClass('animate');
-            $('.perspective').removeClass('modalview');
-            $('.wrapper').removeClass('wrapper-animate');
-            $('.nav').removeClass('nav-animate');
-            $('.shadow').removeClass('animate-shadow');
-        }
+        setTimeout(function () {
+            $('.container').removeClass('overflow');
+        },150);
+
+        var id = $(this).attr("id");
+
+        setTimeout(function () {
+            if(id == 'about-link'){
+                $('html, body').animate({
+                    scrollTop: $("#bm-about").offset().top
+                }, 600);
+            }else if (id == 'models-link'){
+                $('html, body').animate({
+                    scrollTop: $("#bm-models").offset().top
+                }, 900);
+            }
+        },500);
     });
 
 });

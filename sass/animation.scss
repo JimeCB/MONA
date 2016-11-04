@@ -10,14 +10,15 @@ html, body {
   height: 100%;
   background-color: lightgray;
   position: relative;
-}
 
-.modalview {
   -webkit-perspective: 1800px;
   -moz-perspective: 1800px;
   -o-perspective: 1800px;
   perspective: 1800px;
 
+}
+
+.modalview {
   position: fixed;
 }
 
@@ -34,7 +35,7 @@ html, body {
 }
 
 .animate {
-  overflow: hidden;
+
   -webkit-transform-origin: 50% 120%;
   -moz-transform-origin: 50% 120%;
   -o-transform-origin: 50% 120%;
@@ -44,6 +45,10 @@ html, body {
   -moz-transform: translateZ(-1500px) rotateX(80deg);
   -o-transform: translateZ(-1500px) rotateX(80deg);
   transform: translateZ(-1500px) rotateX(80deg);
+}
+
+.overflow {
+  overflow: hidden;
 }
 
 .shadow {
