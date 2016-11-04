@@ -38,6 +38,13 @@ html, body {
 .overflow {
   overflow: hidden; }
 
+.wrapper {
+  position: relative; }
+
+.wrapper-animate {
+  -webkit-transform: translateZ(-1px);
+  /* solves a rendering bug in Chrome on Windows */ }
+
 .shadow {
   background-color: #585858;
   position: absolute;
@@ -66,13 +73,6 @@ html, body {
   -moz-transform: translateZ(-1600px) rotateX(80deg);
   -o-transform: translateZ(-1600px) rotateX(80deg);
   transform: translateZ(-1600px) rotateX(80deg); }
-
-.wrapper {
-  position: relative; }
-
-.wrapper-animate {
-  -webkit-transform: translateZ(-1px);
-  /* solves a rendering bug in Chrome on Windows */ }
 
 .nav {
   position: absolute;

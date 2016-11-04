@@ -183,8 +183,8 @@ img {
   @include breakpoint(medium){
     height:11em;
   }
-  @include breakpoint(xsmall){
-    height:13em;
+  @include breakpoint(small){
+    height:14em;
   }
 }
 .about {
@@ -281,7 +281,6 @@ img {
     margin: auto;
   }
 }
-
 .model {
   display: -webkit-box;
   display: -moz-box;
@@ -293,7 +292,7 @@ img {
   justify-content: center;
 
   position: relative;
-  height: 35em;
+  height: 30em;
   padding-bottom: 5%;
   @include breakpoint(medium){
     height: 28em;
@@ -332,56 +331,87 @@ img {
   img {
     margin: 0;
     padding: 0 1%;
-    @include breakpoint(medium){
-      max-height: 400px;
-    }
+    max-height: 400px;
     @include breakpoint(xsmall){
-      max-height: 100%;
       width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+.description{
+  padding: 0 3%;
+}
+.models-numbers {
+  opacity:0.5
+}
+.button2{
+  position: relative;
+  top: 4em;
+  background-color: white;
+  border: 2px solid black;
+  padding: 5% 8%;
+  display: block;
+  clear: both;
+  font-family: $font_modelname;
+  cursor: pointer;
+  z-index: 100;
+  &:hover {
+    background-color: black;
+    a{
+      color: white;
     }
   }
 }
 
-.models-numbers {
-  opacity:0.5
-}
 .icon-horizontal {
   margin:0 0 5% 0;
   @include breakpoint(xsmall){
     margin:5% 0 0 30%;
   }
-  button {
-    background-color:transparent;
-    cursor:pointer;
-  }
-  i {
-    font-size:1.8em;
-    margin:0.2em;
+  .diamond{
+    display: inline-block;
+    margin: 0 0 0 1em;
   }
 }
-.icon-vertical {
-  padding: 2% 1%;
-  @include breakpoint(xsmall){
-    position: relative;
-    margin:5% 0 5% 25%;
-  }
-  button {
-    display:block;
-    background-color:transparent;
-    cursor:pointer;
-    @include breakpoint(xsmall){
-      display:inline-block;
-    }
-  }
-  i{
-    font-size: 1.8em;
-    margin:0.2em;
-  }
 
-}
 
 #icon-h1, #icon-v1, #icon-v5 {
-  color:$pink;
+  background:$pink;
+}
+
+.icon-vertical{
+  @include breakpoint(xsmall){
+    position: relative;
+    margin:5% 0 5% 15%;
+  }
+  .diamond {
+    @include breakpoint(xsmall){
+      display: inline-block;
+      margin: 1em;
+    }
+  }
+}
+
+.diamond {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 15px;
+  height: 15px;
+  margin: 1.5em;
+  border: none;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: rgba(0,0,0,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: black;
+  -webkit-transform: rotateZ(-45deg)   ;
+  transform: rotateZ(-45deg)   ;
+  -webkit-transform-origin: 0 100% 0deg;
+  transform-origin: 0 100% 0deg;
+  &:hover {
+    background: $pink;
+  }
 }
 
 /* -----------------------------------Responsive----------------------------------------------- */

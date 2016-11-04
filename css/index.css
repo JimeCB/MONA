@@ -181,9 +181,9 @@ img {
   @media (max-width: 1250px) {
     #about {
       height: 11em; } }
-  @media (max-width: 580px) {
+  @media (max-width: 870px) {
     #about {
-      height: 13em; } }
+      height: 14em; } }
 
 .about {
   position: relative;
@@ -280,7 +280,7 @@ img {
   -webkit-flex-flow: row wrap;
   justify-content: center;
   position: relative;
-  height: 35em;
+  height: 30em;
   padding-bottom: 5%; }
   @media (max-width: 1250px) {
     .model {
@@ -314,49 +314,75 @@ img {
         line-height: 1.5em; } }
   .model img {
     margin: 0;
-    padding: 0 1%; }
-    @media (max-width: 1250px) {
-      .model img {
-        max-height: 400px; } }
+    padding: 0 1%;
+    max-height: 400px; }
     @media (max-width: 580px) {
       .model img {
-        max-height: 100%;
-        width: 100%; } }
+        width: 100%;
+        max-height: 100%; } }
+
+.description {
+  padding: 0 3%; }
 
 .models-numbers {
   opacity: 0.5; }
+
+.button2 {
+  position: relative;
+  top: 4em;
+  background-color: white;
+  border: 2px solid black;
+  padding: 5% 8%;
+  display: block;
+  clear: both;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  z-index: 100; }
+  .button2:hover {
+    background-color: black; }
+    .button2:hover a {
+      color: white; }
 
 .icon-horizontal {
   margin: 0 0 5% 0; }
   @media (max-width: 580px) {
     .icon-horizontal {
       margin: 5% 0 0 30%; } }
-  .icon-horizontal button {
-    background-color: transparent;
-    cursor: pointer; }
-  .icon-horizontal i {
-    font-size: 1.8em;
-    margin: 0.2em; }
-
-.icon-vertical {
-  padding: 2% 1%; }
-  @media (max-width: 580px) {
-    .icon-vertical {
-      position: relative;
-      margin: 5% 0 5% 25%; } }
-  .icon-vertical button {
-    display: block;
-    background-color: transparent;
-    cursor: pointer; }
-    @media (max-width: 580px) {
-      .icon-vertical button {
-        display: inline-block; } }
-  .icon-vertical i {
-    font-size: 1.8em;
-    margin: 0.2em; }
+  .icon-horizontal .diamond {
+    display: inline-block;
+    margin: 0 0 0 1em; }
 
 #icon-h1, #icon-v1, #icon-v5 {
-  color: #ff80b2; }
+  background: #ff80b2; }
+
+@media (max-width: 580px) {
+  .icon-vertical {
+    position: relative;
+    margin: 5% 0 5% 15%; } }
+@media (max-width: 580px) {
+  .icon-vertical .diamond {
+    display: inline-block;
+    margin: 1em; } }
+
+.diamond {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 15px;
+  height: 15px;
+  margin: 1.5em;
+  border: none;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: black;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: black;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-transform-origin: 0 100% 0deg;
+  transform-origin: 0 100% 0deg; }
+  .diamond:hover {
+    background: #ff80b2; }
 
 /* -----------------------------------Responsive----------------------------------------------- */
 /* ------------------ For desktop extra large ------------------------- */
