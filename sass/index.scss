@@ -52,8 +52,11 @@ $bp-minimum:  320px;
 [class*="col-"] {
   position:relative;
   float: left;
+  height: 100%;
   @include breakpoint(xsmall){
     width: 100%;
+    float: none;
+    height: auto;
   }
 }
 body {
@@ -121,90 +124,127 @@ img {
       right: 5%;
     }
   }
-}
-.logo {
-  position:absolute;
-  left:10%;
-  @include breakpoint(medium){
-    left:5%;
-  }
-}
-
-
-/* ------------------Content------------------- */
-.home {
-  position:relative;
-  img {
-    width:100%;
-    height:auto;
-  }
-}
-.caption {
-  position: absolute;
-  top: 25%;
-  left:10%;
-  z-index: 10;
-  @include breakpoint(medium){
-    left:5%;
-  }
-  @include breakpoint(xsmall){
-    height: 22em;
-    position:relative;
-    top:0;
-    left:0;
-    padding:5%;
-    text-align:justify;
-  }
-}
-.button {
-  margin-top:3em;
-  @include breakpoint(medium){
-    margin-top:2em;
-  }
-  @include breakpoint(small){
-    display: none;
-  }
-  @include breakpoint(xsmall){
-    display: block;
-    margin:5% 0 5% 25%;
-  }
-  a {
-    background-color: $light_blue;
-    padding:0.8em 1.8em;
-    &:hover {
-      color:white;
-      background-color:black;
+  .logo {
+    position:absolute;
+    left:10%;
+    @include breakpoint(medium){
+      left:5%;
     }
   }
 }
 
-#about{
-  height: 18em;
-  @include breakpoint(medium){
-    height:11em;
+/* ------------------Content------------------- */
+
+.home {
+  position:relative;
+  width: 100%;
+  height: 100%;
+  background: url(../images/home.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  .caption {
+    position: absolute;
+    top: 25%;
+    left:10%;
+    z-index: 10;
+    @include breakpoint(medium){
+      left:5%;
+    }
+    @include breakpoint(xsmall){
+      height: 22em;
+      position:relative;
+      top:0;
+      left:0;
+      padding:5%;
+      text-align:justify;
+    }
+    .button {
+      margin-top:3em;
+      @include breakpoint(medium){
+        margin-top:2em;
+      }
+      @include breakpoint(small){
+        display: none;
+      }
+      @include breakpoint(xsmall){
+        display: block;
+        margin:15% 0 5% 25%;
+      }
+      a {
+        background-color: $light_blue;
+        padding:0.8em 1.8em;
+        &:hover {
+          color:white;
+          background-color:black;
+        }
+      }
+    }
   }
-  @include breakpoint(small){
-    height:14em;
+
+  @include breakpoint(xsmall){
+    background: url(../images/home-mobile.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+}
+
+#about{
+  height: 20em;
+  @include breakpoint(medium){
+    height:13em;
+  }
+  @include breakpoint(xsmall){
+    height:22em;
   }
 }
-.about {
-  position:relative;
-  height:35em;
-  text-align:right;
-  padding: 0 10% 0 10%;
+.about1 {
+  position: relative;
+  height: 35em;
+  padding-left: 10%;
   @include breakpoint(medium){
-    padding: 0 5% 0 5%;
+    padding-left: 5%;
     height:25em;
   }
   @include breakpoint(small){
     height: 22em;
   }
   @include breakpoint(xsmall){
-    height:18em;
+    display: none;
+  }
+  img {
+    margin: 0;
+  }
+
+}
+.about2 {
+  position:relative;
+  height:35em;
+  text-align:right;
+  padding-right: 10%;
+  @include breakpoint(medium){
+    padding-right: 5%;
+    height:25em;
+  }
+  @include breakpoint(small){
+    height: 22em;
+  }
+  @include breakpoint(xsmall){
+    height: 100%;
     text-align:justify;
+    padding: 0 10%;
   }
   h2{
     padding: 10% 0 5% 0;
+    @include breakpoint(xsmall){
+      padding: 15% 0;
+      font-size: 2em;
+    }
   }
   p {
     line-height: 2.5em;
@@ -212,34 +252,35 @@ img {
       line-height:2em;
     }
     @include breakpoint(xsmall){
+      font-size: 1em;
       line-height: 1.5em;
     }
   }
-  img {
-    margin: 0;
-    @include breakpoint(xsmall){
-      display:none;
-    }
-  }
 }
-.also {
+
+.also1 {
   position:relative;
-  height:40em;
+  height:38em;
   text-align:left;
-  padding: 0 10% 0 10%;
+  padding-left: 10%;
   @include breakpoint(medium){
-    padding: 0 5% 0 5%;
+    padding-left: 5%;
     height:31em;
   }
   @include breakpoint(small){
     height:22em;
   }
   @include breakpoint(xsmall){
-    height:50em;
+    height:100%;
     text-align:justify;
+    padding: 0 10%;
   }
   h2 {
     margin:10% 0 5% 0;
+    @include breakpoint(xsmall){
+      padding: 15% 0;
+      font-size: 2em;
+    }
   }
   p {
     padding:0 5% 5% 0;
@@ -250,32 +291,49 @@ img {
     @include breakpoint(xsmall){
       line-height: 1.5em;
       padding:0 0 5% 0;
-    }
-  }
-  img{
-    margin: 0;
-    position: absolute;
-    right: 0;
-    @include breakpoint(medium){
-      max-height: 500px;
-    }
-    @include breakpoint(small){
-      max-height: 380px;
-    }
-    @include breakpoint(xsmall){
-      max-height: 100%;
-      position: relative;
-      display: block;
-      margin: auto;
-      width: 100%;
+      font-size: 1em;
     }
   }
 }
-.models {
-  h2{
-    text-align: center;
-    padding: 5%;
+.also2 {
+  position: relative;
+  height: 38em;
+  @include breakpoint(medium){
+    height:31em;
   }
+  @include breakpoint(small){
+    height:22em;
+  }
+  @include breakpoint(xsmall){
+    height: 100%;
+    background: url(../images/jacket.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  img {
+    margin: 0;
+    max-height: 100%;
+    position: absolute;
+    right: 20%;
+    @include breakpoint(medium){
+      right: 10%;
+    }
+    @include breakpoint(xsmall){
+      display: none;
+    }
+  }
+}
+
+#bm-models{
+  text-align: center;
+  padding: 5%;
+  @include breakpoint(xsmall){
+    padding: 10% 0;
+  }
+}
+.models {
   @include breakpoint(xsmall){
     display: none;
   }
@@ -330,14 +388,65 @@ img {
       min-height: 100%;
     }
   }
+  .button2{
+    position: relative;
+    top: 4em;
+    background-color: white;
+    border: 2px solid black;
+    padding: 5% 8%;
+    display: block;
+    clear: both;
+    font-family: $font_modelname;
+    cursor: pointer;
+    z-index: 100;
+    &:hover {
+      background-color: black;
+      a{
+        color: white;
+      }
+    }
+  }
+  .description{
+    padding: 0 3%;
+  }
+  .models-numbers {
+    opacity:0.5
+  }
 }
-
+#img_model1 {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: url(../images/model1.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  @include breakpoint(xsmall){
+    width: 100%;
+    height: 100%;
+  }
+}
+#img_model2 {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: url(../images/model5.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  @include breakpoint(xsmall){
+    width: 100%;
+    height: 100%;
+  }
+}
 .model-mobile{
   display: none;
   position: relative;
   width: 100%;
   height: 100%;
-  background: url(../images/model9.png) no-repeat center center;
+  background: url(../images/model9.png) no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -355,63 +464,6 @@ img {
   }
 }
 
-#img_model1 {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  background: url(../images/model1.png) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  @include breakpoint(xsmall){
-    width: 100%;
-    height: 100%;
-  }
-}
-
-#img_model2 {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  background: url(../images/model5.png) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  @include breakpoint(xsmall){
-    width: 100%;
-    height: 100%;
-  }
-}
-
-
-
-.description{
-  padding: 0 3%;
-}
-.models-numbers {
-  opacity:0.5
-}
-.button2{
-  position: relative;
-  top: 4em;
-  background-color: white;
-  border: 2px solid black;
-  padding: 5% 8%;
-  display: block;
-  clear: both;
-  font-family: $font_modelname;
-  cursor: pointer;
-  z-index: 100;
-  &:hover {
-    background-color: black;
-    a{
-      color: white;
-    }
-  }
-}
-
 .icon-horizontal {
   margin:0 0 5% 0;
   @include breakpoint(xsmall){
@@ -422,7 +474,6 @@ img {
     margin: 0 0 0 1em;
   }
 }
-
 .icon-horizontal2 {
   position: absolute;
   top: 10%;
@@ -431,14 +482,10 @@ img {
     display: inline-block;
     margin: 0 0 0 1em;
   }
-
 }
-
-
-#icon-h1, #icon-v1, #icon-v5 {
+#icon-h1, #icon-v1, #icon-v5 ,#icon-v9 {
   background:$pink;
 }
-
 .icon-vertical{
   @include breakpoint(xsmall){
     position: relative;
@@ -451,7 +498,6 @@ img {
     }
   }
 }
-
 .diamond {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -473,9 +519,6 @@ img {
     background: $pink;
   }
 }
-
-
-
 
 /* -----------------------------------Responsive----------------------------------------------- */
 /* ------------------ For desktop extra large ------------------------- */
