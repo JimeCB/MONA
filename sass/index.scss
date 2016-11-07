@@ -15,6 +15,7 @@ $pink:#ff80b2;
 $light_pink:#feeaea;
 $light_blue:#eafefe;
 $dark_gray:#585858;
+$light_black: #2b2b2b;
 
 $bp-large:    1800px;
 $bp-medium:   1250px;
@@ -108,6 +109,7 @@ img {
 
 /* ------------------Header-------------------- */
 .minimenu{
+  position: relative;
   width: 100%;
   height: 4em;
   background-color: $light_pink;
@@ -138,13 +140,17 @@ img {
 .home {
   position:relative;
   width: 100%;
-  height: 100%;
-  background: url(../images/home.png) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
+  @include breakpoint(xsmall){
+    height: 100%;
+    background: url(../images/home.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    img {
+      display: none;
+    }
+  }
   .caption {
     position: absolute;
     top: 25%;
@@ -194,15 +200,6 @@ img {
 
 }
 
-#about{
-  height: 20em;
-  @include breakpoint(medium){
-    height:13em;
-  }
-  @include breakpoint(xsmall){
-    height:22em;
-  }
-}
 .about1 {
   position: relative;
   height: 35em;
@@ -239,10 +236,19 @@ img {
     text-align:justify;
     padding: 0 10%;
   }
+  .about-text{
+    height: 20em;
+    @include breakpoint(medium){
+      height:13em;
+    }
+    @include breakpoint(xsmall){
+      height:22em;
+    }
+  }
   h2{
     padding: 10% 0 5% 0;
     @include breakpoint(xsmall){
-      padding: 15% 0;
+      padding: 25% 0;
       font-size: 2em;
     }
   }
@@ -278,7 +284,7 @@ img {
   h2 {
     margin:10% 0 5% 0;
     @include breakpoint(xsmall){
-      padding: 15% 0;
+      padding: 25% 0;
       font-size: 2em;
     }
   }
@@ -306,7 +312,7 @@ img {
   }
   @include breakpoint(xsmall){
     height: 100%;
-    background: url(../images/jacket.png) no-repeat center center;
+    background: url(../images/jacket2.png) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -326,121 +332,102 @@ img {
   }
 }
 
-#bm-models{
-  text-align: center;
-  padding: 5%;
-  @include breakpoint(xsmall){
-    padding: 10% 0;
-  }
-}
 .models {
   @include breakpoint(xsmall){
     display: none;
   }
-}
-.model {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+  h2{
+    text-align: center;
+    padding: 5%;
+  }
+  .model {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 
-  -webkit-flex-flow: row wrap;
-  justify-content: center;
+    -webkit-flex-flow: row wrap;
+    justify-content: center;
 
-  position: relative;
-  height: 30em;
-  padding-bottom: 5%;
-  @include breakpoint(medium){
-    height: 28em;
-  }
-  @include breakpoint(xsmall){
-    height: 45em;
-    display: block;
-
-  }
-  h3 {
-    font-size:2em;
-    font-family: $font_modelname;
-    font-weight:300;
-    padding: 5% 5% 5% 0;
-    @include breakpoint(xsmall){
-      text-align:center;
-    }
-  }
-  p {
-    width: 80px;
-    float: left;
-    line-height:2em;
-    font-family: $font_modelname;
-    font-weight:300;
-    @include breakpoint(xsmall){
-      font-size: 0.9em;
-      line-height:1.5em;
-    }
-  }
-  img {
-    padding: 0 1%;
-    max-height: 400px;
-    margin: 0;
-    @include breakpoint(xsmall){
-      width: 100%;
-      min-height: 100%;
-    }
-  }
-  .button2{
     position: relative;
-    top: 4em;
-    background-color: white;
-    border: 2px solid black;
-    padding: 5% 8%;
-    display: block;
-    clear: both;
-    font-family: $font_modelname;
-    cursor: pointer;
-    z-index: 100;
-    &:hover {
-      background-color: black;
-      a{
-        color: white;
+    height: 30em;
+    padding-bottom: 5%;
+    @include breakpoint(medium){
+      height: 28em;
+    }
+    @include breakpoint(xsmall){
+      height: 45em;
+      display: block;
+
+    }
+    h3 {
+      font-size:2em;
+      font-family: $font_modelname;
+      font-weight:300;
+      padding: 5% 5% 5% 0;
+      @include breakpoint(xsmall){
+        text-align:center;
       }
     }
-  }
-  .description{
-    padding: 0 3%;
-  }
-  .models-numbers {
-    opacity:0.5
+    p {
+      width: 80px;
+      float: left;
+      line-height:2em;
+      font-family: $font_modelname;
+      font-weight:300;
+      @include breakpoint(small){
+        font-size: 0.9em;
+      }
+      @include breakpoint(xsmall){
+        line-height:1.5em;
+      }
+    }
+    .img_model1 {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      background: url(../images/model1.png) no-repeat center center;
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+    }
+    .img_model2 {
+      @extend .img_model1;
+      background: url(../images/model5.png) no-repeat center center;
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+    }
+    .button2{
+      position: relative;
+      top: 4em;
+      background-color: white;
+      border: 2px solid black;
+      padding: 5% 8%;
+      display: block;
+      clear: both;
+      font-family: $font_modelname;
+      cursor: pointer;
+      z-index: 100;
+      &:hover {
+        background-color: black;
+        a{
+          color: white;
+        }
+      }
+    }
+    .description{
+      padding: 0 3%;
+    }
+    .models-numbers {
+      opacity:0.5
+    }
   }
 }
-#img_model1 {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  background: url(../images/model1.png) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  @include breakpoint(xsmall){
-    width: 100%;
-    height: 100%;
-  }
-}
-#img_model2 {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  background: url(../images/model5.png) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  @include breakpoint(xsmall){
-    width: 100%;
-    height: 100%;
-  }
-}
+
 .model-mobile{
   display: none;
   position: relative;
@@ -457,10 +444,90 @@ img {
     right: 10%;
     font-family: $font_modelname;
     font-size: 2em;
-    text-shadow: 2px 2px 8px white;
   }
   @include breakpoint(xsmall){
     display: block;
+  }
+}
+
+.contact{
+  position: relative;
+  width: 100%;
+  margin: auto;
+  height: 34em;
+  @include breakpoint(medium){
+    height: 32em;
+  }
+  @include breakpoint(xsmall){
+    height: 100%;
+  }
+  h2 {
+    text-align: center;
+    padding: 5%;
+    @include breakpoint(xsmall){
+      padding: 20% 0;
+    }
+  }
+  p {
+    padding: 1ex;
+    margin: 1em 0;
+    border: 1px solid $light_pink;
+    label {
+      padding: 0 1em;
+    }
+  }
+  .data{
+    width: 30%;
+    margin: auto;
+    @include breakpoint(medium){
+      width: 40%;
+    }
+    @include breakpoint(small){
+      width: 50%;
+    }
+    @include breakpoint(xsmall){
+      width: 90%;
+    }
+  }
+  button {
+    background-color: $light_black;
+    color: white;
+    font-size: 1em;
+    width: 100%;
+    padding: 1em 0;
+    &:hover{
+      background-color: $light_blue;
+      color: black;
+    }
+  }
+
+}
+
+footer{
+  position: relative;
+  width: 100%;
+  height: 5em;
+  p{
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    color: $dark_gray;
+    @include breakpoint(medium){
+      left: 5%;
+    }
+  }
+  .icons-social{
+    position: absolute;
+    right: 10%;
+    top:10%;
+    @include breakpoint(medium){
+      right:5%;
+    }
+    i {
+      font-size: 1em;
+      color: $dark_gray;
+      padding-left: 1em;
+    }
   }
 }
 
@@ -519,6 +586,8 @@ img {
     background: $pink;
   }
 }
+
+
 
 /* -----------------------------------Responsive----------------------------------------------- */
 /* ------------------ For desktop extra large ------------------------- */

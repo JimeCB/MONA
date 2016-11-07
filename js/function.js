@@ -10,7 +10,7 @@ function change_text (index){
 
 function change_img(index) {
 	if (index < 5) {
-		$('#img_model1').css('background','url(images/model' + index + '.png)');
+		$('#img_model1').css('background','url(images/model' + index + '.png)').css('background-size','cover');
 		for(var i = 1; i < 5; i++) {
 			document.getElementById('icon-v' + i).style.background = (i == index) ? '#ff80b2' : "black";}
 	}else if (4 < index){

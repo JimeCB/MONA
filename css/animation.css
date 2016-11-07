@@ -126,4 +126,10 @@ html, body {
   -o-transition-delay: 1s;
   transition-delay: 1s; }
 
+.nav-animate a:nth-child(6) {
+  -webkit-transition-delay: 1.2s;
+  -moz-transition-delay: 1.2s;
+  -o-transition-delay: 1.2s;
+  transition-delay: 1.2s; }
+
 /*# sourceMappingURL=animation.css.map */
