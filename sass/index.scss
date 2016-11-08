@@ -180,6 +180,7 @@ img {
         margin:15% 0 5% 25%;
       }
       a {
+        z-index: 11;
         background-color: $light_blue;
         padding:0.8em 1.8em;
         &:hover {
@@ -593,7 +594,6 @@ img {
   }
 }
 
-
 footer{
   position: relative;
   width: 100%;
@@ -636,6 +636,9 @@ footer{
       font-size: 1.5em;
       color: $dark_gray;
       padding-left: 1em;
+      &:hover {
+        color: $pink;
+      }
       @include breakpoint(xsmall){
         font-size: 2em;
       }
@@ -676,9 +679,6 @@ footer{
     margin: 0 0 0 1em;
   }
 }
-#icon-h1, #icon-v1, #icon-v5 ,#icon-v9, #icon-n1 {
-  background:$pink;
-}
 .icon-vertical{
   @include breakpoint(xsmall){
     position: relative;
@@ -691,29 +691,26 @@ footer{
     }
   }
 }
+
 .diamond {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
   width: 15px;
   height: 15px;
-  margin: 1.5em;
-  border: none;
-  font: normal 100%/normal Arial, Helvetica, sans-serif;
-  color: rgba(0,0,0,1);
-  -o-text-overflow: clip;
-  text-overflow: clip;
-  background: black;
-  -webkit-transform: rotateZ(-45deg)   ;
-  transform: rotateZ(-45deg)   ;
-  -webkit-transform-origin: 0 100% 0deg;
-  transform-origin: 0 100% 0deg;
-  &:hover {
-    background: $pink;
+  background-color: black;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  margin: 1em;
+  border: 0;
+  box-shadow: 0;
+  &:hover{
+    background-color: $pink;
   }
 }
-
-
+.diamond-border {
+  background-color: $pink;
+  border: 3px solid rgba(255,255,255,1);
+  -webkit-box-shadow: 0 0 0 3px $pink ;
+  box-shadow: 0 0 0 3px $pink ;
+}
 
 /* -----------------------------------Responsive----------------------------------------------- */
 /* ------------------ For desktop extra large ------------------------- */

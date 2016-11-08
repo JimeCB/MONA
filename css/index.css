@@ -179,6 +179,7 @@ img {
           display: block;
           margin: 15% 0 5% 25%; } }
       .home .caption .button a {
+        z-index: 11;
         background-color: #eafefe;
         padding: 0.8em 1.8em; }
         .home .caption .button a:hover {
@@ -579,6 +580,8 @@ footer {
       font-size: 1.5em;
       color: #585858;
       padding-left: 1em; }
+      footer .icons-social i:hover {
+        color: #ff80b2; }
       @media (max-width: 580px) {
         footer .icons-social i {
           font-size: 2em; } }
@@ -612,9 +615,6 @@ footer {
     display: inline-block;
     margin: 0 0 0 1em; }
 
-#icon-h1, #icon-v1, #icon-v5, #icon-v9, #icon-n1 {
-  background: #ff80b2; }
-
 @media (max-width: 580px) {
   .icon-vertical {
     position: relative;
@@ -625,24 +625,22 @@ footer {
     margin: 1em; } }
 
 .diamond {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
   width: 15px;
   height: 15px;
-  margin: 1.5em;
-  border: none;
-  font: normal 100%/normal Arial, Helvetica, sans-serif;
-  color: black;
-  -o-text-overflow: clip;
-  text-overflow: clip;
-  background: black;
+  background-color: black;
   -webkit-transform: rotateZ(-45deg);
   transform: rotateZ(-45deg);
-  -webkit-transform-origin: 0 100% 0deg;
-  transform-origin: 0 100% 0deg; }
+  margin: 1em;
+  border: 0;
+  box-shadow: 0; }
   .diamond:hover {
-    background: #ff80b2; }
+    background-color: #ff80b2; }
+
+.diamond-border {
+  background-color: #ff80b2;
+  border: 3px solid white;
+  -webkit-box-shadow: 0 0 0 3px #ff80b2;
+  box-shadow: 0 0 0 3px #ff80b2; }
 
 /* -----------------------------------Responsive----------------------------------------------- */
 /* ------------------ For desktop extra large ------------------------- */
