@@ -9,7 +9,7 @@ $(document).ready(function(){
         $('.nav').addClass('nav-animate');
     });
 
-    $( '#home-link, #about-link, #models-link, #contact-link, .wrapper' ).click(function(ev) {
+    $( '#home-link, #about-link, #models-link, #contact-link, #news-link, .wrapper' ).click(function(ev) {
         ev.stopPropagation();
         ev.preventDefault();
         $('.nav').removeClass('nav-animate');
@@ -30,7 +30,7 @@ $(document).ready(function(){
                 $('html, body').animate({
                     scrollTop: $("#bm-about").offset().top
                 }, 600);
-            }else if (id == 'models-link'){
+            } else if (id == 'models-link'){
                 if(width > 680){
                     $('html, body').animate({
                         scrollTop: $("#bm-models").offset().top
@@ -40,10 +40,14 @@ $(document).ready(function(){
                         scrollTop: $("#model-mobile").offset().top
                     }, 900);
                 }
-            }else if (id == 'contact-link'){
+            } else if (id == 'news-link'){
+                $('html, body').animate({
+                    scrollTop: $("#news").offset().top
+                }, 1100);
+            } else if (id == 'contact-link'){
                 $('html, body').animate({
                     scrollTop: $("#contact").offset().top
-                }, 1100);
+                }, 1300);
             }
         },500);
     });

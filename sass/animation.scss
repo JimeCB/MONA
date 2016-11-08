@@ -1,5 +1,33 @@
 $dark_gray:#585858;
 
+$bp-large:    1800px;
+$bp-medium:   1250px;
+$bp-small:    870px;
+$bp-xsmall:   580px;
+$bp-minimum:  320px;
+
+@mixin breakpoint($bp){
+  @if ($bp == large){
+    @media (max-width: $bp-large){ @content }
+  }
+
+  @else if ($bp == medium){
+    @media (max-width: $bp-medium){ @content }
+  }
+
+  @else if ($bp == small){
+    @media (max-width: $bp-small){ @content }
+  }
+
+  @else if ($bp == xsmall){
+    @media (max-width: $bp-xsmall){ @content }
+  }
+
+  @else if ($bp == minimum){
+    @media (max-width: $bp-minimum){ @content }
+  }
+}
+
 html, body {
   position: relative;
   height: 100%;
@@ -101,8 +129,10 @@ html, body {
   position: absolute;
   top: 30%;
   left:45%;
-
   z-index: 10;
+  @include breakpoint(xsmall){
+    left: 40%;
+  }
 }
 
 .nav a{

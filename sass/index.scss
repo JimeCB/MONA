@@ -500,33 +500,159 @@ img {
       color: black;
     }
   }
-
 }
+
+.news{
+  position: relative;
+  width: 100%;
+  height: 34em;
+  background-color: $light_pink;
+  @include breakpoint(medium){
+    height: 30em;
+  }
+  @include breakpoint(xsmall){
+    height: 100%;
+  }
+  img {
+    position: absolute;
+    left:0;
+    bottom: 0;
+    @include breakpoint(medium){
+      max-height: 33em;
+    }
+    @include breakpoint(small){
+      display: none;
+    }
+  }
+  h2 {
+    text-align: center;
+    padding: 5%;
+    @include breakpoint(small){
+      padding-top: 10%;
+    }
+    @include breakpoint(xsmall){
+      padding: 20% 0;
+    }
+  }
+  .blue-box {
+    background-color: $light_blue;
+    width: 80%;
+    margin: auto;
+    @include breakpoint(small){
+      -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+      -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+      -o-box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    }
+    .news-info{
+      padding: 5% 5% 5% 25%;
+      @include breakpoint(medium){
+        padding-left: 35%;
+      }
+      @include breakpoint(small){
+        padding: 5%;
+        text-align: center;
+      }
+      h3 {
+        font-family: $font_modelname;
+        font-weight: bold;
+      }
+      h4 {
+        color: hotpink;
+      }
+      p {
+        font-size: 0.8em;
+        color: darkgray;
+        line-height: 1.5em;
+      }
+      button {
+        background-color: $light_black;
+        color: white;
+        padding: 0.9em 1.4em;
+        margin: 1em 0;
+        font-size: 0.7em;
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+  .icon-horizontal {
+    position: absolute;
+    bottom: 5%;
+    left: 45%;
+    margin: 0;
+    @include breakpoint(small){
+      left: 40%;
+      bottom: 10%;
+    }
+    @include breakpoint(xsmall){
+      left: 30%;
+    }
+  }
+}
+
 
 footer{
   position: relative;
   width: 100%;
-  height: 5em;
+  height: 8em;
+  @include breakpoint(xsmall){
+    height: 100%;
+  }
   p{
     position: absolute;
     left: 10%;
     top: 10%;
     color: $dark_gray;
+    font-size: 0.9em;
     @include breakpoint(medium){
       left: 5%;
+    }
+    @include breakpoint(xsmall){
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 15% 5%;
+      text-align: center;
+      font-size: 1em;
     }
   }
   .icons-social{
     position: absolute;
     right: 10%;
-    top:10%;
+    bottom: 2em;
     @include breakpoint(medium){
       right:5%;
     }
+    @include breakpoint(xsmall){
+      position: relative;
+      top:0;
+      left: 0;
+      padding: 15% 5% 15% 20%;
+    }
     i {
-      font-size: 1em;
+      font-size: 1.5em;
       color: $dark_gray;
       padding-left: 1em;
+      @include breakpoint(xsmall){
+        font-size: 2em;
+      }
+    }
+  }
+  img {
+    position: absolute;
+    left: 10%;
+    bottom: 1em;
+    width: 8em;
+    @include breakpoint(medium){
+      left: 5%;
+    }
+    @include breakpoint(xsmall){
+      position: relative;
+      padding: 15% 0;
+
     }
   }
 }
@@ -550,7 +676,7 @@ footer{
     margin: 0 0 0 1em;
   }
 }
-#icon-h1, #icon-v1, #icon-v5 ,#icon-v9 {
+#icon-h1, #icon-v1, #icon-v5 ,#icon-v9, #icon-n1 {
   background:$pink;
 }
 .icon-vertical{
